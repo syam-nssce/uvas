@@ -172,14 +172,97 @@ footer{background:var(--charcoal);color:rgba(255,255,255,.7);padding:3rem 2rem 1
 .footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:1.25rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:gap;font-size:.78rem;color:rgba(255,255,255,.4)}
 
 /* ── MOBILE ── */
-@media(max-width:700px){
-  .nav-links{display:none;flex-direction:column;position:absolute;top:68px;left:0;right:0;background:#3E2010;z-index:200;border-top:1px solid rgba(255,255,255,.1)}
-  .nav-links.open{display:flex}
-  .nav-links a{border-bottom:1px solid rgba(255,255,255,.07);padding:1rem 1.5rem}
+@media(max-width:768px){
+  /* ── NAV ── */
+  nav{padding:0 1rem}
+  .nav-links{display:none;flex-direction:column;position:absolute;top:0;left:0;right:0;background:#3E2010;z-index:200;border-top:1px solid rgba(255,255,255,.1);max-height:90vh;overflow-y:auto}
+  .nav-links.open{display:flex;top:148px}
+  .nav-links a{border-bottom:1px solid rgba(255,255,255,.07);padding:1rem 1.5rem;font-size:.85rem}
   .hamburger{display:flex}
+  .nav-brand img{height:70px!important;width:70px!important}
+  .nav-title h2{font-size:1rem!important}
+  .nav-title p{font-size:.72rem!important}
+
+  /* ── DROPDOWN ON MOBILE ── */
+  .nav-dropdown{width:100%}
+  .nav-dropdown>a{padding:1rem 1.5rem;border-bottom:1px solid rgba(255,255,255,.07)}
+  .nav-dropdown>a::after{margin-left:auto}
+  .dropdown-menu{display:none;position:static;box-shadow:none;border-top:none;background:rgba(0,0,0,.25);width:100%}
+  .nav-dropdown.open .dropdown-menu{display:block}
+  .dropdown-menu a{padding:.75rem 2.5rem;font-size:.8rem}
+
+  /* ── HERO ── */
+  .hero{padding:3rem 1.2rem}
+  .hero h1{font-size:1.5rem}
+  .hero p{font-size:.9rem}
+  .hero-actions{flex-direction:column;align-items:center}
+  .hero-actions .btn{width:100%;max-width:280px;text-align:center}
+
+  /* ── STATS ── */
+  .stats-inner{grid-template-columns:repeat(2,1fr);gap:1rem}
+  .stat-num{font-size:1.6rem}
+
+  /* ── SECTIONS ── */
+  .section{padding:2.5rem 1.2rem}
+  .section-sm{padding:2rem 1.2rem}
+  .section-title{font-size:1.4rem}
+
+  /* ── GRIDS ── */
+  .grid-3{grid-template-columns:1fr}
+  .grid-2{grid-template-columns:1fr}
   .form-row{grid-template-columns:1fr}
   .footer-grid{grid-template-columns:1fr}
   .fee-options{grid-template-columns:1fr}
+
+  /* ── WELCOME SECTION ── */
+  .welcome-text{font-size:.95rem!important}
+
+  /* ── NEWS ── */
+  .news-item{flex-direction:row;gap:.75rem}
+  .news-date{min-width:48px}
+
+  /* ── ORDERS TABLE ── */
+  .orders-table{font-size:.78rem;display:block;overflow-x:auto;white-space:nowrap}
+  .search-bar{flex-direction:column}
+  .search-bar input,.search-bar select{width:100%}
+
+  /* ── HELPDESK ── */
+  .query-header{flex-wrap:wrap}
+
+  /* ── FORMS ── */
+  .form-wrap{padding:1.25rem}
+  .pay-box{flex-direction:column;text-align:center}
+
+  /* ── HOME TWO-COL ── */
+  div[style*="grid-template-columns:1fr 1fr"]{display:block!important}
+  div[style*="grid-template-columns:1fr 1fr"] > div{margin-bottom:2rem}
+
+  /* ── FOOTER ── */
+  footer{padding:2rem 1.2rem 1rem}
+  .footer-bottom{flex-direction:column;gap:.5rem;text-align:center}
+
+  /* ── ADMIN TABLE ── */
+  .orders-table th:nth-child(3),
+  .orders-table td:nth-child(3),
+  .orders-table th:nth-child(5),
+  .orders-table td:nth-child(5){display:none}
+
+  /* ── GALLERY ── */
+  #galleryGrid{grid-template-columns:repeat(2,1fr)!important}
+
+  /* ── DISTRICT GRID ── */
+  div[style*="minmax(220px,1fr)"]{grid-template-columns:1fr 1fr!important}
+
+  /* ── ABOUT KEY FACTS ── */
+  div[style*="minmax(180px,1fr)"]{grid-template-columns:1fr 1fr!important}
+}
+
+@media(max-width:400px){
+  .hero h1{font-size:1.3rem}
+  .stats-inner{grid-template-columns:1fr 1fr}
+  #galleryGrid{grid-template-columns:1fr!important}
+  div[style*="minmax(220px,1fr)"]{grid-template-columns:1fr!important}
+  .nav-title h2{font-size:.85rem!important}
 }
 
 /* ── ADMIN PANEL ── */
@@ -227,7 +310,7 @@ footer{background:var(--charcoal);color:rgba(255,255,255,.7);padding:3rem 2rem 1
     <a href="#" class="active" onclick="showPage('home',this)">Home</a>
     <a href="#" onclick="showPage('aboutus',this)">About Us</a>
     <div class="nav-dropdown">
-      <a href="#" onclick="return false">Committee</a>
+      <a href="#" onclick="toggleDropdown(event,this)">Committee</a>
       <div class="dropdown-menu">
         <a href="#" onclick="showPage('state-committee',this);document.getElementById('navLinks').classList.remove('open')">State Committee</a>
         <a href="#" onclick="showPage('district-committee',this);document.getElementById('navLinks').classList.remove('open')">District Committee</a>
@@ -1311,6 +1394,14 @@ function showPage(id, el) {
 function toggleReply(id) {
   const el = document.getElementById(id);
   el.classList.toggle('open');
+}
+
+function toggleDropdown(e, el) {
+  if (window.innerWidth <= 768) {
+    e.preventDefault();
+    const parent = el.closest('.nav-dropdown');
+    parent.classList.toggle('open');
+  }
 }
 
 function adminLogin() {
