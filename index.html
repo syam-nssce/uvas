@@ -176,12 +176,14 @@ footer{background:var(--charcoal);color:rgba(255,255,255,.7);padding:3rem 2rem 1
   /* ── NAV ── */
   nav{padding:0 1rem}
   .nav-links{display:none;flex-direction:column;position:absolute;top:0;left:0;right:0;background:#3E2010;z-index:200;border-top:1px solid rgba(255,255,255,.1);max-height:90vh;overflow-y:auto}
-  .nav-links.open{display:flex;top:148px}
+  .nav-links.open{display:flex;top:100px}
   .nav-links a{border-bottom:1px solid rgba(255,255,255,.07);padding:1rem 1.5rem;font-size:.85rem}
   .hamburger{display:flex}
-  .nav-brand img:first-of-type{height:70px!important;width:70px!important}.nav-brand img:last-of-type{display:none!important}
-  .nav-title h2{font-size:1rem!important}
-  .nav-title p{font-size:.72rem!important}
+  .nav-brand{gap:8px!important}
+  .nav-brand img:first-of-type{height:55px!important;width:55px!important}
+  .nav-brand img:last-of-type{display:none!important}
+  .nav-title h2{font-size:.88rem!important}
+  .nav-title p{font-size:.65rem!important;margin-top:1px!important}
 
   /* ── DROPDOWN ON MOBILE ── */
   .nav-dropdown{width:100%}
@@ -262,7 +264,8 @@ footer{background:var(--charcoal);color:rgba(255,255,255,.7);padding:3rem 2rem 1
   .stats-inner{grid-template-columns:1fr 1fr}
   #galleryGrid{grid-template-columns:1fr!important}
   div[style*="minmax(220px,1fr)"]{grid-template-columns:1fr!important}
-  .nav-title h2{font-size:.85rem!important}
+  .nav-title h2{font-size:.78rem!important}
+  .nav-brand img:first-of-type{height:46px!important;width:46px!important}
 }
 
 /* ── ADMIN PANEL ── */
@@ -920,6 +923,22 @@ footer{background:var(--charcoal);color:rgba(255,255,255,.7);padding:3rem 2rem 1
           </div>
           <div class="form-row">
             <div class="form-group">
+              <label>Religion *</label>
+              <select>
+                <option value="">- - Select Religion - -</option>
+                <option value="Hindu">Hindu</option>
+                <option value="Christian">Christian</option>
+                <option value="Muslim">Muslim</option>
+                <option value="Buddhist">Buddhist</option>
+                <option value="Jain">Jain</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <!-- spacer -->
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
               <label>Set Password *</label>
               <input type="password" id="newPassword" placeholder="Minimum 8 characters"/>
               <span style="font-size:.75rem;color:var(--muted);margin-top:.2rem">Used to log in and post Help Desk queries</span>
@@ -983,6 +1002,38 @@ footer{background:var(--charcoal);color:rgba(255,255,255,.7);padding:3rem 2rem 1
                 <option>Wayanad</option>
                 <option>Kannur</option>
                 <option>Kasaragod</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row full">
+            <div class="form-group">
+              <label>University *</label>
+              <select>
+                <option value="">Select your University</option>
+                <option value="University of Kerala">University of Kerala</option>
+                <option value="M.G University">M.G University</option>
+                <option value="SSUS Kalady">SSUS Kalady</option>
+                <option value="University of Calicut">University of Calicut</option>
+                <option value="CUSAT">CUSAT</option>
+                <option value="Kannoor University">Kannoor University</option>
+                <option value="Sree Narayana Open University">Sree Narayana Open University</option>
+                <option value="Amrita Viswavidyapeeth">Amrita Viswavidyapeeth</option>
+                <option value="Chinmaya Viswavidyapeeth">Chinmaya Viswavidyapeeth</option>
+                <option value="Kasargod Central University">Kasargod Central University</option>
+                <option value="Kerala Technical University">Kerala Technical University</option>
+                <option value="Central Sanskrit University">Central Sanskrit University</option>
+                <option value="Kerala Agricultural University">Kerala Agricultural University</option>
+                <option value="Kerala University for Health Science">Kerala University for Health Science</option>
+                <option value="Kerala Veterinary University">Kerala Veterinary University</option>
+                <option value="IIT Palakkad">IIT Palakkad</option>
+                <option value="NIT Calicut">NIT Calicut</option>
+                <option value="IIM Calicut">IIM Calicut</option>
+                <option value="Aligarh University">Aligarh University</option>
+                <option value="Kerala Kalamandalam University">Kerala Kalamandalam University</option>
+                <option value="Jain University">Jain University</option>
+                <option value="NUALS">NUALS</option>
+                <option value="Maritime University Kundanoor">Maritime University Kundanoor</option>
+                <option value="Others">Others</option>
               </select>
             </div>
           </div>
