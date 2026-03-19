@@ -4,289 +4,871 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>ABRSM UVAS - Kerala Wing</title>
-<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
+/* ═══════════════════════════════════════════════════════
+   UVAS KERALA WING — Professional Modern Design System
+   Fonts: Cormorant Garamond (display) + Outfit (body)
+═══════════════════════════════════════════════════════ */
+
 :root{
-  --saffron:#E8621E;
-  --saffron-light:#FEF0E6;
-  --deep-orange:#B84A10;
+  --brown:      #3E2010;
+  --brown-mid:  #5C3118;
+  --brown-light:#F5EDE6;
+  --orange:     #B84A10;
+  --orange-mid: #C45A1A;
+  --saffron:    #E8621E;
   --orange-light:#FDF3EC;
-  --gold:#B8922A;
-  --gold-pale:#FAF3E0;
-  --cream:#FDFAF4;
-  --charcoal:#1E1E1E;
-  --text:#2C2C2C;
-  --muted:#6B6B6B;
-  --border:#E0DDD5;
-  --white:#ffffff;
-  --red:#C0392B;
+  --gold:       #B8922A;
+  --gold-light: #FAF3E0;
+  --cream:      #FDFAF4;
+  --white:      #FFFFFF;
+  --text:       #1A1008;
+  --text-mid:   #4A3020;
+  --muted:      #7A6858;
+  --border:     #E8DDD4;
+  --shadow-sm:  0 2px 8px rgba(62,32,16,.08);
+  --shadow-md:  0 4px 20px rgba(62,32,16,.12);
+  --shadow-lg:  0 8px 40px rgba(62,32,16,.16);
+  --radius-sm:  8px;
+  --radius-md:  14px;
+  --radius-lg:  22px;
+  --radius-xl:  32px;
 }
-body{font-family:'Source Sans 3',sans-serif;color:var(--text);background:var(--cream);font-size:16px;line-height:1.7}
-h1,h2,h3,h4{font-family:'Libre Baskerville',serif;font-weight:700;line-height:1.25}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Outfit',sans-serif;
+  color:var(--text);
+  background:var(--cream);
+  font-size:16px;
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4{
+  font-family:'Cormorant Garamond',serif;
+  font-weight:700;
+  line-height:1.2;
+  color:var(--brown);
+}
 a{color:inherit;text-decoration:none}
+img{max-width:100%}
 
-/* ── NAV ── */
-nav{background:#3E2010;padding:2px 2rem;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,.35)}
-.nav-brand{display:flex;align-items:center;gap:12px;padding:10px 0}
-.nav-logo{width:48px;height:48px;background:var(--white);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Libre Baskerville',serif;font-weight:700;color:var(--deep-orange);font-size:13px;text-align:center;line-height:1.1;padding:4px;flex-shrink:0}
-.nav-title{color:var(--white)}
-.nav-title h2{font-size:1.5rem;font-family:'Libre Baskerville',serif;letter-spacing:.02em}
-.nav-title p{font-size:1rem;color:rgba(255,255,255,.7);font-family:'Source Sans 3',sans-serif;font-weight:300;margin-top:3px}
+/* ── NAVIGATION ──────────────────────────────────────── */
+nav{
+  background:var(--brown);
+  padding:0 2.5rem;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  position:sticky;
+  top:0;
+  z-index:100;
+  box-shadow:0 2px 20px rgba(0,0,0,.3);
+  border-bottom:3px solid var(--gold);
+}
+.nav-brand{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  padding:10px 0;
+  cursor:pointer;
+}
+.nav-title h2{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.4rem;
+  font-weight:700;
+  color:var(--white);
+  letter-spacing:.01em;
+  line-height:1.2;
+}
+.nav-title p{
+  font-family:'Outfit',sans-serif;
+  font-size:.72rem;
+  color:rgba(255,255,255,.7);
+  font-weight:300;
+  margin-top:2px;
+  line-height:1.4;
+}
 .nav-links{display:flex;gap:0}
-.nav-links a{color:rgba(255,255,255,.85);font-size:.8rem;font-weight:500;padding:1.2rem 1rem;display:block;transition:all .2s;letter-spacing:.03em;text-transform:uppercase}
-.nav-links a:hover,.nav-links a.active{color:var(--white);background:rgba(255,255,255,.1)}
-.nav-links a.active{border-bottom:2px solid var(--gold)}
+.nav-links a{
+  color:rgba(255,255,255,.82);
+  font-family:'Outfit',sans-serif;
+  font-size:.75rem;
+  font-weight:500;
+  padding:1.3rem 1rem;
+  display:block;
+  transition:all .2s;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  position:relative;
+}
+.nav-links a::after{
+  content:'';
+  position:absolute;
+  bottom:0;left:50%;right:50%;
+  height:3px;
+  background:var(--gold);
+  transition:all .25s;
+}
+.nav-links a:hover{color:var(--white);background:rgba(255,255,255,.06)}
+.nav-links a:hover::after,.nav-links a.active::after{left:0;right:0}
+.nav-links a.active{color:var(--white);background:rgba(255,255,255,.08)}
 .hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px}
-.hamburger span{display:block;width:22px;height:2px;background:var(--white);border-radius:2px}
+.hamburger span{display:block;width:22px;height:2px;background:var(--white);border-radius:2px;transition:all .2s}
 
-/* ── PAGES ── */
+/* ── DROPDOWN ────────────────────────────────────────── */
+.nav-dropdown{position:relative}
+.nav-dropdown>a{display:flex;align-items:center;gap:.3rem}
+.nav-dropdown>a::before{content:'▾';font-size:.6rem;order:2;opacity:.7}
+.dropdown-menu{
+  display:none;
+  position:absolute;
+  top:calc(100% + 3px);
+  left:0;
+  background:var(--brown);
+  min-width:210px;
+  border-top:3px solid var(--gold);
+  border-radius:0 0 var(--radius-sm) var(--radius-sm);
+  z-index:300;
+  box-shadow:var(--shadow-lg);
+  overflow:hidden;
+}
+.dropdown-menu a{
+  display:block;
+  padding:.8rem 1.4rem;
+  color:rgba(255,255,255,.82);
+  font-size:.78rem;
+  font-weight:400;
+  letter-spacing:.04em;
+  text-transform:uppercase;
+  border-bottom:1px solid rgba(255,255,255,.06);
+  transition:all .18s;
+}
+.dropdown-menu a:last-child{border-bottom:none}
+.dropdown-menu a:hover{background:rgba(255,255,255,.1);color:var(--gold);padding-left:1.8rem}
+.nav-dropdown:hover .dropdown-menu{display:block}
+
+/* ── PAGE SYSTEM ─────────────────────────────────────── */
 .page{display:none}
 .page.active{display:block}
 
-/* ── HERO ── */
-.hero{background:linear-gradient(135deg,#B84A10 0%,#96380A 60%,#C05218 100%);color:var(--white);padding:5rem 2rem;text-align:center;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;top:-60px;right:-80px;width:300px;height:300px;border-radius:50%;background:rgba(180,146,42,.08)}
-.hero::after{content:'';position:absolute;bottom:-40px;left:-60px;width:220px;height:220px;border-radius:50%;background:rgba(212,82,26,.06)}
-.hero-badge{display:inline-block;background:rgba(184,146,42,.2);border:1px solid rgba(184,146,42,.4);color:var(--gold);font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:.35rem 1rem;border-radius:2rem;margin-bottom:1.5rem}
-.hero h1{font-size:clamp(2rem,5vw,3rem);max-width:700px;margin:0 auto 1rem;color:var(--white)}
-.hero p{font-size:1.05rem;max-width:560px;margin:0 auto 2rem;color:rgba(255,255,255,.72);font-family:'Source Sans 3',sans-serif;font-weight:300}
+/* ── HERO ────────────────────────────────────────────── */
+.hero{
+  background:linear-gradient(135deg,#B84A10 0%,#96380A 60%,#C05218 100%);
+  color:var(--white);
+  padding:6rem 2.5rem 5rem;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+.hero::before{
+  content:'';
+  position:absolute;inset:0;
+  background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+.hero::after{
+  content:'';
+  position:absolute;
+  bottom:-2px;left:0;right:0;
+  height:60px;
+  background:var(--cream);
+  clip-path:ellipse(55% 100% at 50% 100%);
+}
+.hero-inner{position:relative;z-index:1;max-width:760px;margin:0 auto}
+.hero-badge{
+  display:inline-block;
+  background:rgba(184,146,42,.15);
+  border:1px solid rgba(184,146,42,.4);
+  color:var(--gold);
+  font-family:'Outfit',sans-serif;
+  font-size:.68rem;
+  font-weight:600;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  padding:.45rem 1.4rem;
+  border-radius:50px;
+  margin-bottom:1.75rem;
+}
+.hero h1{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(2.2rem,5.5vw,3.4rem);
+  font-weight:700;
+  color:var(--white);
+  margin-bottom:1.1rem;
+  letter-spacing:-.01em;
+  line-height:1.15;
+}
+.hero p{
+  font-size:1rem;
+  max-width:580px;
+  margin:0 auto 2.5rem;
+  color:rgba(255,255,255,.68);
+  font-weight:300;
+  line-height:1.8;
+}
 .hero-actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
-.btn{padding:.75rem 1.75rem;border-radius:4px;font-size:.9rem;font-weight:600;cursor:pointer;border:none;transition:all .2s;letter-spacing:.02em;font-family:'Source Sans 3',sans-serif}
-.btn-primary{background:var(--saffron);color:var(--white)}
-.btn-primary:hover{background:#B84515}
-.btn-outline{background:transparent;color:var(--white);border:1.5px solid rgba(255,255,255,.45)}
-.btn-outline:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.7)}
+.btn{
+  padding:.82rem 2rem;
+  border-radius:50px;
+  font-family:'Outfit',sans-serif;
+  font-size:.78rem;
+  font-weight:600;
+  cursor:pointer;
+  border:none;
+  transition:all .25s;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.btn-primary{background:var(--saffron);color:var(--white);box-shadow:0 4px 16px rgba(196,81,26,.35)}
+.btn-primary:hover{background:var(--orange);transform:translateY(-2px);box-shadow:0 6px 24px rgba(196,81,26,.45)}
+.btn-outline{background:transparent;color:var(--white);border:1.5px solid rgba(255,255,255,.4)}
+.btn-outline:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.8)}
 
-/* ── TICKER ── */
-.ticker{background:var(--saffron);color:var(--white);padding:.5rem 2rem;display:flex;align-items:center;gap:1rem;overflow:hidden}
-.ticker-label{background:rgba(0,0,0,.2);font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.2rem .7rem;border-radius:2px;white-space:nowrap;flex-shrink:0}
+/* ── TICKER ──────────────────────────────────────────── */
+.ticker{
+  background:var(--saffron);
+  color:var(--white);
+  padding:.55rem 2.5rem;
+  display:flex;
+  align-items:center;
+  gap:1rem;
+  overflow:hidden;
+}
+.ticker-label{
+  background:rgba(0,0,0,.2);
+  font-family:'Outfit',sans-serif;
+  font-size:.65rem;
+  font-weight:700;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  padding:.25rem 1rem;
+  border-radius:50px;
+  white-space:nowrap;
+  flex-shrink:0;
+}
 .ticker-track{flex:1;overflow:hidden}
 .ticker-inner{display:flex;gap:3rem;animation:tick 28s linear infinite;width:max-content}
-.ticker-inner span{font-size:.82rem;white-space:nowrap}
+.ticker-inner span{font-size:.82rem;font-weight:400}
 @keyframes tick{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
-/* ── SECTION LAYOUT ── */
-.section{padding:4rem 2rem;max-width:1100px;margin:0 auto}
-.section-sm{padding:2.5rem 2rem;max-width:1100px;margin:0 auto}
-.section-label{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--saffron);margin-bottom:.5rem}
-.section-title{font-size:clamp(1.5rem,3vw,2.1rem);margin-bottom:.5rem;color:var(--charcoal)}
-.section-sub{color:var(--muted);font-size:.95rem;max-width:560px}
-.section-head{margin-bottom:2.5rem}
+/* ── LAYOUT ──────────────────────────────────────────── */
+.section{padding:4.5rem 2.5rem;max-width:1140px;margin:0 auto}
+.section-sm{padding:3rem 2.5rem;max-width:1140px;margin:0 auto}
+.section-label{
+  font-family:'Outfit',sans-serif;
+  font-size:.65rem;
+  font-weight:700;
+  letter-spacing:.24em;
+  text-transform:uppercase;
+  color:var(--saffron);
+  margin-bottom:.6rem;
+  display:flex;
+  align-items:center;
+  gap:.6rem;
+}
+.section-label::before{
+  content:'';
+  display:inline-block;
+  width:24px;height:2px;
+  background:var(--saffron);
+  border-radius:2px;
+}
+.section-title{
+  font-size:clamp(1.6rem,3.5vw,2.4rem);
+  margin-bottom:.6rem;
+  color:var(--brown);
+  letter-spacing:-.01em;
+}
+.section-sub{color:var(--muted);font-size:.95rem;max-width:560px;line-height:1.8}
+.section-head{margin-bottom:3rem}
 
-/* ── CARDS ── */
-.grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.25rem}
-.grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:1.25rem}
-.card{background:var(--white);border:1px solid var(--border);border-radius:6px;padding:1.5rem;transition:box-shadow .2s,transform .2s}
-.card:hover{box-shadow:0 4px 20px rgba(0,0,0,.08);transform:translateY(-2px)}
-.card-icon{width:40px;height:40px;border-radius:8px;background:var(--orange-light);display:flex;align-items:center;justify-content:center;margin-bottom:1rem;font-size:1.1rem}
-.card h3{font-size:1rem;margin-bottom:.4rem;color:var(--charcoal)}
-.card p{font-size:.88rem;color:var(--muted);line-height:1.6}
+/* ── CARDS ───────────────────────────────────────────── */
+.grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:1.5rem}
+.grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(360px,1fr));gap:1.5rem}
+.card{
+  background:var(--white);
+  border:1px solid var(--border);
+  border-radius:var(--radius-lg);
+  padding:2rem;
+  transition:all .3s;
+  position:relative;
+  overflow:hidden;
+}
+.card::before{
+  content:'';
+  position:absolute;
+  top:0;left:0;right:0;
+  height:3px;
+  background:linear-gradient(90deg,var(--orange),var(--gold));
+  transform:scaleX(0);
+  transform-origin:left;
+  transition:transform .3s;
+}
+.card:hover{
+  box-shadow:var(--shadow-lg);
+  transform:translateY(-5px);
+  border-color:transparent;
+}
+.card:hover::before{transform:scaleX(1)}
+.card-icon{
+  width:48px;height:48px;
+  border-radius:var(--radius-md);
+  background:var(--orange-light);
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:1.25rem;
+  font-size:1.2rem;
+  border:1px solid rgba(196,81,26,.15);
+}
+.card h3{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.15rem;
+  margin-bottom:.5rem;
+  color:var(--brown);
+}
+.card p{font-size:.88rem;color:var(--muted);line-height:1.7}
 
-/* ── STATS BAR ── */
-.stats-bar{background:var(--deep-orange);color:var(--white);padding:2.5rem 2rem}
-.stats-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:2rem;text-align:center}
-.stat-num{font-family:'Libre Baskerville',serif;font-size:2.2rem;font-weight:700;color:var(--gold)}
-.stat-lbl{font-size:.8rem;color:rgba(255,255,255,.65);text-transform:uppercase;letter-spacing:.1em;margin-top:.25rem}
+/* ── STATS BAR ───────────────────────────────────────── */
+.stats-bar{
+  background:var(--orange);
+  padding:3rem 2.5rem;
+  position:relative;
+  overflow:hidden;
+}
+.stats-bar::before{
+  content:'';
+  position:absolute;inset:0;
+  background:radial-gradient(circle at 80% 50%,rgba(184,146,42,.08) 0%,transparent 60%);
+}
+.stats-inner{
+  max-width:1140px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  gap:2rem;
+  text-align:center;
+  position:relative;z-index:1;
+}
+.stat-num{
+  font-family:'Cormorant Garamond',serif;
+  font-size:2.8rem;
+  font-weight:700;
+  color:var(--gold);
+  line-height:1;
+  margin-bottom:.4rem;
+}
+.stat-lbl{
+  font-size:.72rem;
+  color:rgba(255,255,255,.55);
+  text-transform:uppercase;
+  letter-spacing:.14em;
+  font-family:'Outfit',sans-serif;
+}
 
-/* ── NEWS / EVENTS ── */
-.news-item{display:flex;gap:1rem;padding:1.2rem 0;border-bottom:1px solid var(--border)}
-.news-date{flex-shrink:0;text-align:center;background:var(--saffron-light);border:1px solid var(--saffron);border-radius:4px;padding:.4rem .7rem;width:58px}
-.news-date .day{font-family:'Libre Baskerville',serif;font-size:1.3rem;font-weight:700;color:var(--saffron);line-height:1}
-.news-date .mon{font-size:.65rem;color:var(--saffron);text-transform:uppercase;letter-spacing:.06em}
-.news-content h4{font-size:.92rem;margin-bottom:.2rem;color:var(--charcoal);font-family:'Libre Baskerville',serif}
+/* ── PAGE HEADERS ────────────────────────────────────── */
+.page-header{
+  background:var(--orange);
+  padding:3rem 2.5rem;
+  color:var(--white);
+  position:relative;
+  overflow:hidden;
+  border-bottom:3px solid var(--gold);
+}
+.page-header::after{
+  content:'';
+  position:absolute;
+  top:-60px;right:-60px;
+  width:200px;height:200px;
+  border-radius:50%;
+  background:rgba(184,146,42,.06);
+}
+
+/* ── NEWS / EVENTS ───────────────────────────────────── */
+.news-item{
+  display:flex;
+  gap:1.25rem;
+  padding:1.4rem 0;
+  border-bottom:1px solid var(--border);
+  transition:all .2s;
+}
+.news-item:last-child{border-bottom:none}
+.news-item:hover{padding-left:.5rem}
+.news-date{
+  flex-shrink:0;
+  text-align:center;
+  background:var(--orange-light);
+  border:1px solid rgba(196,81,26,.2);
+  border-radius:var(--radius-md);
+  padding:.5rem .8rem;
+  width:62px;
+}
+.news-date .day{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.5rem;
+  font-weight:700;
+  color:var(--orange);
+  line-height:1;
+}
+.news-date .mon{
+  font-size:.62rem;
+  color:var(--orange);
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  font-family:'Outfit',sans-serif;
+}
+.news-content h4{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1rem;
+  margin-bottom:.2rem;
+  color:var(--brown);
+}
 .news-content p{font-size:.82rem;color:var(--muted)}
-.news-tag{display:inline-block;font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.15rem .55rem;border-radius:2px;margin-bottom:.35rem}
-.tag-event{background:#FEF0E6;color:var(--deep-orange)}
-.tag-news{background:var(--saffron-light);color:var(--saffron)}
-.tag-circular{background:var(--gold-pale);color:var(--gold)}
+.news-tag{
+  display:inline-block;
+  font-family:'Outfit',sans-serif;
+  font-size:.62rem;
+  font-weight:700;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  padding:.18rem .65rem;
+  border-radius:50px;
+  margin-bottom:.4rem;
+}
+.tag-event{background:#EAF2EE;color:#1A5C38}
+.tag-news{background:var(--orange-light);color:var(--orange)}
+.tag-circular{background:var(--gold-light);color:var(--gold)}
 
-/* ── FORM STYLES ── */
-.form-wrap{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:2rem}
-.form-title{font-size:1.25rem;margin-bottom:.25rem;color:var(--charcoal)}
-.form-sub{font-size:.85rem;color:var(--muted);margin-bottom:1.75rem}
-.form-section{margin-bottom:1.5rem}
-.form-section-label{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--deep-orange);border-bottom:1px solid var(--border);padding-bottom:.5rem;margin-bottom:1rem}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem}
+/* ── FORMS ───────────────────────────────────────────── */
+.form-wrap{
+  background:var(--white);
+  border:1px solid var(--border);
+  border-radius:var(--radius-xl);
+  padding:2.5rem;
+  box-shadow:var(--shadow-sm);
+}
+.form-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.5rem;
+  margin-bottom:.3rem;
+  color:var(--brown);
+}
+.form-sub{font-size:.85rem;color:var(--muted);margin-bottom:2rem;line-height:1.7}
+.form-section{margin-bottom:2rem}
+.form-section-label{
+  font-family:'Outfit',sans-serif;
+  font-size:.65rem;
+  font-weight:700;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:var(--orange);
+  border-bottom:2px solid var(--orange-light);
+  padding-bottom:.6rem;
+  margin-bottom:1.25rem;
+}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-bottom:1.25rem}
 .form-row.full{grid-template-columns:1fr}
-.form-group{display:flex;flex-direction:column;gap:.35rem}
-.form-group label{font-size:.82rem;font-weight:600;color:var(--text)}
-.form-group input,.form-group select,.form-group textarea{border:1px solid var(--border);border-radius:4px;padding:.6rem .85rem;font-size:.9rem;font-family:'Source Sans 3',sans-serif;color:var(--text);background:var(--cream);transition:border .2s}
-.form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--deep-orange);background:var(--white)}
+.form-group{display:flex;flex-direction:column;gap:.4rem}
+.form-group label{
+  font-family:'Outfit',sans-serif;
+  font-size:.78rem;
+  font-weight:600;
+  color:var(--text-mid);
+  letter-spacing:.02em;
+}
+.form-group input,.form-group select,.form-group textarea{
+  border:1.5px solid var(--border);
+  border-radius:var(--radius-sm);
+  padding:.7rem 1rem;
+  font-size:.9rem;
+  font-family:'Outfit',sans-serif;
+  color:var(--text);
+  background:var(--cream);
+  transition:all .2s;
+  outline:none;
+}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{
+  border-color:var(--orange);
+  background:var(--white);
+  box-shadow:0 0 0 3px rgba(196,81,26,.1);
+}
 .form-group textarea{resize:vertical;min-height:90px}
-.fee-options{display:grid;grid-template-columns:repeat(2,1fr);gap:.75rem;margin-top:.35rem}
-.fee-option{display:flex;align-items:center;gap:.6rem;padding:.8rem 1rem;border:1.5px solid var(--border);border-radius:4px;cursor:pointer;transition:all .2s}
-.fee-option:has(input:checked){border-color:var(--deep-orange);background:var(--orange-light)}
-.fee-option input{accent-color:var(--deep-orange)}
-.fee-option .amt{font-family:'Libre Baskerville',serif;font-size:1.05rem;font-weight:700;color:var(--charcoal)}
-.fee-option .lbl{font-size:.75rem;color:var(--muted)}
-.pay-box{background:var(--orange-light);border:1px solid var(--deep-orange);border-radius:6px;padding:1.2rem;margin:1.5rem 0;display:flex;align-items:center;gap:1rem}
-.pay-qr{width:72px;height:72px;background:var(--white);border:1px solid var(--border);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:.65rem;color:var(--muted);text-align:center;flex-shrink:0}
-.pay-info h4{font-size:.9rem;margin-bottom:.2rem;color:var(--deep-orange)}
-.pay-info .upi{font-family:'Source Sans 3',monospace;font-size:.95rem;font-weight:700;color:var(--charcoal);background:var(--white);border:1px solid var(--border);border-radius:3px;padding:.2rem .5rem;display:inline-block;margin:.25rem 0}
+.fee-options{display:grid;grid-template-columns:repeat(2,1fr);gap:.85rem;margin-top:.4rem}
+.fee-option{
+  display:flex;
+  align-items:center;
+  gap:.7rem;
+  padding:.9rem 1.1rem;
+  border:1.5px solid var(--border);
+  border-radius:var(--radius-md);
+  cursor:pointer;
+  transition:all .2s;
+  background:var(--cream);
+}
+.fee-option:has(input:checked){
+  border-color:var(--orange);
+  background:var(--orange-light);
+  box-shadow:0 0 0 3px rgba(196,81,26,.1);
+}
+.fee-option input{accent-color:var(--orange)}
+.fee-option .amt{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.2rem;
+  font-weight:700;
+  color:var(--brown);
+}
+.fee-option .lbl{font-size:.75rem;color:var(--muted);font-family:'Outfit',sans-serif}
+.pay-box{
+  background:var(--orange-light);
+  border:1.5px solid rgba(196,81,26,.25);
+  border-radius:var(--radius-lg);
+  padding:1.4rem;
+  margin:1.5rem 0;
+  display:flex;
+  align-items:center;
+  gap:1.25rem;
+}
+.pay-qr{
+  width:76px;height:76px;
+  background:var(--white);
+  border:1px solid var(--border);
+  border-radius:var(--radius-sm);
+  display:flex;align-items:center;justify-content:center;
+  font-size:.62rem;color:var(--muted);text-align:center;
+  flex-shrink:0;
+}
+.pay-info h4{font-size:.92rem;margin-bottom:.25rem;color:var(--brown);font-family:'Cormorant Garamond',serif;font-weight:700}
+.pay-info .upi{
+  font-family:'Outfit',monospace;
+  font-size:.9rem;
+  font-weight:600;
+  color:var(--brown);
+  background:var(--white);
+  border:1px solid var(--border);
+  border-radius:var(--radius-sm);
+  padding:.25rem .6rem;
+  display:inline-block;
+  margin:.25rem 0;
+}
 .pay-info p{font-size:.78rem;color:var(--muted)}
-.btn-submit{width:100%;background:var(--deep-orange);color:var(--white);padding:.85rem;font-size:.95rem;font-weight:600;border:none;border-radius:4px;cursor:pointer;font-family:'Source Sans 3',sans-serif;transition:background .2s;margin-top:1rem}
-.btn-submit:hover{background:#96380A}
+.btn-submit{
+  width:100%;
+  background:var(--orange);
+  color:var(--white);
+  padding:.9rem;
+  font-family:'Outfit',sans-serif;
+  font-size:.8rem;
+  font-weight:600;
+  border:none;
+  border-radius:50px;
+  cursor:pointer;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  transition:all .25s;
+  margin-top:1rem;
+  box-shadow:0 4px 16px rgba(184,74,16,.3);
+}
+.btn-submit:hover{
+  transform:translateY(-2px);
+  box-shadow:0 8px 24px rgba(62,32,16,.35);
+  background:#96380A;
+}
 
-/* ── HELPDESK ── */
-.query-card{background:var(--white);border:1px solid var(--border);border-radius:6px;margin-bottom:1rem;overflow:hidden}
-.query-header{padding:1rem 1.25rem;display:flex;align-items:flex-start;gap:.75rem;cursor:pointer}
-.query-avatar{width:38px;height:38px;border-radius:50%;background:var(--orange-light);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85rem;color:var(--deep-orange);flex-shrink:0}
+/* ── HELPDESK ────────────────────────────────────────── */
+.query-card{
+  background:var(--white);
+  border:1px solid var(--border);
+  border-radius:var(--radius-lg);
+  margin-bottom:1.25rem;
+  overflow:hidden;
+  transition:all .2s;
+  box-shadow:var(--shadow-sm);
+}
+.query-card:hover{box-shadow:var(--shadow-md)}
+.query-header{padding:1.25rem 1.5rem;display:flex;align-items:flex-start;gap:.85rem;cursor:pointer}
+.query-avatar{
+  width:42px;height:42px;
+  border-radius:50%;
+  background:linear-gradient(135deg,var(--orange-light),var(--gold-light));
+  display:flex;align-items:center;justify-content:center;
+  font-weight:700;font-size:.85rem;
+  color:var(--orange);
+  flex-shrink:0;
+  border:2px solid rgba(196,81,26,.15);
+}
 .query-meta{flex:1}
-.query-meta h4{font-size:.92rem;color:var(--charcoal);font-family:'Libre Baskerville',serif;margin-bottom:.15rem}
-.query-meta p{font-size:.8rem;color:var(--muted)}
-.query-meta .tags{display:flex;gap:.4rem;margin-top:.3rem;flex-wrap:wrap}
-.topic-tag{font-size:.65rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.15rem .5rem;border-radius:2px;background:var(--gold-pale);color:var(--gold)}
-.replies{padding:0 1.25rem 1rem 3.75rem;border-top:1px solid var(--border);display:none}
+.query-meta h4{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1rem;
+  color:var(--brown);
+  margin-bottom:.2rem;
+  line-height:1.4;
+}
+.query-meta p{font-size:.78rem;color:var(--muted)}
+.query-meta .tags{display:flex;gap:.4rem;margin-top:.4rem;flex-wrap:wrap}
+.topic-tag{
+  font-family:'Outfit',sans-serif;
+  font-size:.62rem;
+  font-weight:600;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  padding:.18rem .65rem;
+  border-radius:50px;
+  background:var(--gold-light);
+  color:var(--gold);
+  border:1px solid rgba(184,146,42,.2);
+}
+.replies{padding:0 1.5rem 1.25rem 4.75rem;border-top:1px solid var(--border);display:none}
 .replies.open{display:block}
-.reply{padding:.85rem 0;border-bottom:1px dashed var(--border);font-size:.85rem}
+.reply{padding:.9rem 0;border-bottom:1px dashed var(--border);font-size:.85rem}
 .reply:last-child{border-bottom:none}
-.reply-from{font-size:.75rem;font-weight:600;color:var(--deep-orange);margin-bottom:.25rem}
-.reply p{color:var(--text)}
-.reply-official{background:var(--orange-light);border-left:3px solid var(--deep-orange);padding:.6rem .85rem;border-radius:0 4px 4px 0}
-.votes{display:flex;align-items:center;gap:.4rem;font-size:.78rem;color:var(--muted);padding:.5rem 0}
-.vote-btn{background:none;border:1px solid var(--border);border-radius:3px;padding:.15rem .5rem;cursor:pointer;font-size:.75rem;color:var(--muted);transition:all .2s}
-.vote-btn:hover{border-color:var(--deep-orange);color:var(--deep-orange)}
+.reply-from{font-size:.75rem;font-weight:600;color:var(--orange);margin-bottom:.3rem;font-family:'Outfit',sans-serif}
+.reply p{color:var(--text);line-height:1.7}
+.reply-official{
+  background:linear-gradient(135deg,var(--orange-light),var(--gold-light));
+  border-left:4px solid var(--orange);
+  padding:.8rem 1rem;
+  border-radius:0 var(--radius-sm) var(--radius-sm) 0;
+}
+.votes{display:flex;align-items:center;gap:.5rem;font-size:.78rem;color:var(--muted);padding:.5rem 0}
+.vote-btn{
+  background:none;
+  border:1px solid var(--border);
+  border-radius:50px;
+  padding:.18rem .6rem;
+  cursor:pointer;
+  font-size:.75rem;
+  color:var(--muted);
+  font-family:'Outfit',sans-serif;
+  transition:all .2s;
+}
+.vote-btn:hover{border-color:var(--orange);color:var(--orange);background:var(--orange-light)}
 
-/* ── ORDERS TABLE ── */
-.search-bar{display:flex;gap:.75rem;margin-bottom:1.5rem;flex-wrap:wrap}
-.search-bar input,.search-bar select{border:1px solid var(--border);border-radius:4px;padding:.6rem 1rem;font-size:.9rem;font-family:'Source Sans 3',sans-serif;background:var(--white);color:var(--text)}
+/* ── SEARCH BAR ──────────────────────────────────────── */
+.search-bar{display:flex;gap:.85rem;margin-bottom:1.75rem;flex-wrap:wrap}
+.search-bar input,.search-bar select{
+  border:1.5px solid var(--border);
+  border-radius:var(--radius-sm);
+  padding:.7rem 1rem;
+  font-size:.88rem;
+  font-family:'Outfit',sans-serif;
+  background:var(--white);
+  color:var(--text);
+  outline:none;
+  transition:all .2s;
+}
 .search-bar input{flex:1;min-width:200px}
-.search-bar input:focus,.search-bar select:focus{outline:none;border-color:var(--deep-orange)}
-.orders-table{width:100%;border-collapse:collapse;background:var(--white);border:1px solid var(--border);border-radius:6px;overflow:hidden;font-size:.87rem}
-.orders-table th{background:var(--deep-orange);color:var(--white);padding:.75rem 1rem;text-align:left;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;font-weight:600}
-.orders-table td{padding:.8rem 1rem;border-bottom:1px solid var(--border);color:var(--text)}
+.search-bar input:focus,.search-bar select:focus{
+  border-color:var(--orange);
+  box-shadow:0 0 0 3px rgba(196,81,26,.1);
+}
+
+/* ── ORDERS TABLE ────────────────────────────────────── */
+.orders-table{
+  width:100%;
+  border-collapse:collapse;
+  background:var(--white);
+  border-radius:var(--radius-lg);
+  overflow:hidden;
+  font-size:.87rem;
+  box-shadow:var(--shadow-sm);
+}
+.orders-table th{
+  background:var(--orange);
+  color:var(--white);
+  padding:.9rem 1.25rem;
+  text-align:left;
+  font-family:'Outfit',sans-serif;
+  font-size:.68rem;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  font-weight:600;
+}
+.orders-table td{padding:.9rem 1.25rem;border-bottom:1px solid var(--border);color:var(--text);font-family:'Outfit',sans-serif}
 .orders-table tr:last-child td{border-bottom:none}
-.orders-table tr:hover td{background:var(--cream)}
-.doc-link{color:var(--deep-orange);font-weight:600;font-size:.82rem;text-decoration:underline;cursor:pointer}
+.orders-table tr:hover td{background:var(--orange-light)}
+.doc-link{color:var(--orange);font-weight:600;font-size:.82rem;text-decoration:underline;cursor:pointer;font-family:'Outfit',sans-serif}
 
-/* ── FOOTER ── */
-footer{background:var(--charcoal);color:rgba(255,255,255,.7);padding:3rem 2rem 1.5rem}
-.footer-inner{max-width:1100px;margin:0 auto}
-.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;margin-bottom:2rem}
-.footer h3{color:var(--white);font-size:.95rem;margin-bottom:.85rem}
-.footer p{font-size:.83rem;line-height:1.7;color:rgba(255,255,255,.55)}
-.footer-links{list-style:none;display:flex;flex-direction:column;gap:.5rem}
-.footer-links li a{font-size:.83rem;color:rgba(255,255,255,.55);transition:color .2s}
-.footer-links li a:hover{color:var(--gold)}
-.footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:1.25rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:gap;font-size:.78rem;color:rgba(255,255,255,.4)}
+/* ── MEMBER STATUS ───────────────────────────────────── */
+.member-status{
+  display:inline-flex;
+  align-items:center;
+  gap:.35rem;
+  font-family:'Outfit',sans-serif;
+  font-size:.68rem;
+  font-weight:700;
+  padding:.28rem .8rem;
+  border-radius:50px;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+}
+.status-active{background:#E8F5E9;color:#2E7D32}
+.status-pending{background:var(--gold-light);color:var(--gold)}
+.status-expired{background:#FDEDED;color:#C62828}
 
-/* ── MOBILE ── */
+/* ── ADMIN ───────────────────────────────────────────── */
+.admin-bar{
+  background:var(--text);
+  color:var(--white);
+  padding:.55rem 2.5rem;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  font-family:'Outfit',sans-serif;
+  font-size:.78rem;
+}
+.admin-bar span{color:rgba(255,255,255,.5)}
+.admin-bar button{
+  background:var(--orange);
+  color:var(--white);
+  border:none;
+  padding:.3rem .9rem;
+  border-radius:50px;
+  font-size:.72rem;
+  cursor:pointer;
+  font-family:'Outfit',sans-serif;
+  font-weight:600;
+}
+.admin-notice{
+  background:var(--orange-light);
+  border-left:4px solid var(--orange);
+  padding:.85rem 1.4rem;
+  font-size:.85rem;
+  color:var(--text);
+  margin-bottom:1.75rem;
+  border-radius:0 var(--radius-sm) var(--radius-sm) 0;
+  font-family:'Outfit',sans-serif;
+}
+
+/* ── FOOTER ──────────────────────────────────────────── */
+footer{
+  background:var(--text);
+  color:rgba(255,255,255,.7);
+  padding:4rem 2.5rem 2rem;
+}
+.footer-inner{max-width:1140px;margin:0 auto}
+.footer-grid{
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr;
+  gap:3.5rem;
+  margin-bottom:3rem;
+  padding-bottom:3rem;
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+footer h3{
+  color:var(--white);
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.1rem;
+  margin-bottom:1rem;
+  letter-spacing:.02em;
+}
+footer p{font-size:.83rem;line-height:1.8;color:rgba(255,255,255,.5);font-family:'Outfit',sans-serif}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:.55rem}
+.footer-links li a{
+  font-family:'Outfit',sans-serif;
+  font-size:.83rem;
+  color:rgba(255,255,255,.5);
+  transition:all .2s;
+  display:flex;
+  align-items:center;
+  gap:.4rem;
+}
+.footer-links li a::before{
+  content:'→';
+  font-size:.7rem;
+  opacity:0;
+  transform:translateX(-4px);
+  transition:all .2s;
+}
+.footer-links li a:hover{color:var(--gold);padding-left:.3rem}
+.footer-links li a:hover::before{opacity:1;transform:translateX(0)}
+.footer-bottom{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:.75rem;
+  font-family:'Outfit',sans-serif;
+  font-size:.75rem;
+  color:rgba(255,255,255,.35);
+}
+
+/* ── GALLERY ─────────────────────────────────────────── */
+.gal-item{
+  background:var(--white);
+  border:1px solid var(--border);
+  border-radius:var(--radius-lg);
+  overflow:hidden;
+  cursor:pointer;
+  transition:all .3s;
+}
+.gal-item:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg)}
+.gal-btn{
+  font-family:'Outfit',sans-serif;
+  cursor:pointer;
+  transition:all .2s;
+  border-radius:50px!important;
+  letter-spacing:.06em;
+  font-size:.75rem!important;
+  font-weight:600!important;
+}
+
+/* ── MOBILE ──────────────────────────────────────────── */
 @media(max-width:768px){
-  /* ── NAV ── */
   nav{padding:0 1rem}
-  .nav-links{display:none;flex-direction:column;position:absolute;top:0;left:0;right:0;background:#3E2010;z-index:200;border-top:1px solid rgba(255,255,255,.1);max-height:90vh;overflow-y:auto}
+  .nav-links{display:none;flex-direction:column;position:absolute;top:0;left:0;right:0;background:var(--brown);z-index:200;border-top:1px solid rgba(255,255,255,.1);max-height:90vh;overflow-y:auto}
   .nav-links.open{display:flex;top:100px}
-  .nav-links a{border-bottom:1px solid rgba(255,255,255,.07);padding:1rem 1.5rem;font-size:.85rem}
+  .nav-links a{border-bottom:1px solid rgba(255,255,255,.07);padding:1rem 1.5rem;font-size:.82rem}
+  .nav-links a::after{display:none}
   .hamburger{display:flex}
   .nav-brand{gap:8px!important}
   .nav-brand img:first-of-type{height:55px!important;width:55px!important}
   .nav-brand img:last-of-type{height:55px!important;width:auto!important;margin-left:4px!important}
   .nav-title h2{font-size:.88rem!important}
   .nav-title p{font-size:.65rem!important;margin-top:1px!important}
-
-  /* ── DROPDOWN ON MOBILE ── */
   .nav-dropdown{width:100%}
   .nav-dropdown>a{padding:1rem 1.5rem;border-bottom:1px solid rgba(255,255,255,.07)}
-  .nav-dropdown>a::after{margin-left:auto}
-  .dropdown-menu{display:none;position:static;box-shadow:none;border-top:none;background:rgba(0,0,0,.25);width:100%}
+  .nav-dropdown>a::before{margin-left:auto;order:2}
+  .dropdown-menu{display:none;position:static;box-shadow:none;border-top:none;border-radius:0;background:rgba(0,0,0,.2);width:100%}
   .nav-dropdown.open .dropdown-menu{display:block}
-  .dropdown-menu a{padding:.75rem 2.5rem;font-size:.8rem}
-
-  /* ── HERO ── */
-  .hero{padding:3rem 1.2rem}
-  .hero h1{font-size:1.5rem}
+  .dropdown-menu a{padding:.75rem 2.5rem;font-size:.78rem}
+  .hero{padding:3.5rem 1.5rem 4rem}
+  .hero h1{font-size:1.7rem}
   .hero p{font-size:.9rem}
   .hero-actions{flex-direction:column;align-items:center}
   .hero-actions .btn{width:100%;max-width:280px;text-align:center}
-
-  /* ── STATS ── */
-  .stats-inner{grid-template-columns:repeat(2,1fr);gap:1rem}
-  .stat-num{font-size:1.6rem}
-
-  /* ── SECTIONS ── */
-  .section{padding:2.5rem 1.2rem}
-  .section-sm{padding:2rem 1.2rem}
-  .section-title{font-size:1.4rem}
-
-  /* ── GRIDS ── */
+  .stats-inner{grid-template-columns:repeat(2,1fr);gap:1.25rem}
+  .stat-num{font-size:2rem}
+  .section{padding:3rem 1.5rem}
+  .section-sm{padding:2rem 1.5rem}
+  .section-title{font-size:1.6rem}
   .grid-3{grid-template-columns:1fr}
   .grid-2{grid-template-columns:1fr}
   .form-row{grid-template-columns:1fr}
-  .footer-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr;gap:2rem}
   .fee-options{grid-template-columns:1fr}
-
-  /* ── WELCOME SECTION ── */
-  .welcome-text{font-size:.95rem!important}
-
-  /* ── NEWS ── */
-  .news-item{flex-direction:row;gap:.75rem}
-  .news-date{min-width:48px}
-
-  /* ── ORDERS TABLE ── */
   .orders-table{font-size:.78rem;display:block;overflow-x:auto;white-space:nowrap}
   .search-bar{flex-direction:column}
   .search-bar input,.search-bar select{width:100%}
-
-  /* ── HELPDESK ── */
   .query-header{flex-wrap:wrap}
-
-  /* ── FORMS ── */
-  .form-wrap{padding:1.25rem}
+  .form-wrap{padding:1.5rem}
   .pay-box{flex-direction:column;text-align:center}
-
-  /* ── HOME TWO-COL ── */
   div[style*="grid-template-columns:1fr 1fr"]{display:block!important}
   div[style*="grid-template-columns:1fr 1fr"] > div{margin-bottom:2rem}
-
-  /* ── FOOTER ── */
-  footer{padding:2rem 1.2rem 1rem}
+  footer{padding:2.5rem 1.5rem 1.5rem}
   .footer-bottom{flex-direction:column;gap:.5rem;text-align:center}
-
-  /* ── ADMIN TABLE ── */
-  .orders-table th:nth-child(3),
-  .orders-table td:nth-child(3),
-  .orders-table th:nth-child(5),
-  .orders-table td:nth-child(5){display:none}
-
-  /* ── GALLERY ── */
+  .orders-table th:nth-child(3),.orders-table td:nth-child(3),.orders-table th:nth-child(5),.orders-table td:nth-child(5){display:none}
   #galleryGrid{grid-template-columns:repeat(2,1fr)!important}
-
-  /* ── DISTRICT GRID ── */
   div[style*="minmax(220px,1fr)"]{grid-template-columns:1fr 1fr!important}
-
-  /* ── ABOUT KEY FACTS ── */
   div[style*="minmax(180px,1fr)"]{grid-template-columns:1fr 1fr!important}
 }
-
 @media(max-width:400px){
-  .hero h1{font-size:1.3rem}
-  .stats-inner{grid-template-columns:1fr 1fr}
-  #galleryGrid{grid-template-columns:1fr!important}
-  div[style*="minmax(220px,1fr)"]{grid-template-columns:1fr!important}
+  .hero h1{font-size:1.4rem}
   .nav-title h2{font-size:.78rem!important}
   .nav-brand img:first-of-type{height:46px!important;width:46px!important}
+  #galleryGrid{grid-template-columns:1fr!important}
+  div[style*="minmax(220px,1fr)"]{grid-template-columns:1fr!important}
 }
-
-/* ── ADMIN PANEL ── */
-.admin-bar{background:var(--charcoal);color:var(--white);padding:.5rem 2rem;display:flex;align-items:center;justify-content:space-between;font-size:.78rem}
-.admin-bar span{color:rgba(255,255,255,.5)}
-.admin-bar button{background:var(--saffron);color:var(--white);border:none;padding:.3rem .8rem;border-radius:3px;font-size:.75rem;cursor:pointer}
-.admin-notice{background:var(--saffron-light);border-left:4px solid var(--saffron);padding:.75rem 1.25rem;font-size:.85rem;color:var(--text);margin-bottom:1.5rem;border-radius:0 4px 4px 0}
-
-/* ── MEMBER BADGE ── */
-.member-status{display:inline-flex;align-items:center;gap:.35rem;font-size:.72rem;font-weight:700;padding:.25rem .7rem;border-radius:2rem;letter-spacing:.05em}
-.status-active{background:#FEF0E6;color:var(--deep-orange)}
-.status-pending{background:var(--gold-pale);color:var(--gold)}
-.status-expired{background:#FDE8E6;color:var(--red)}
-
-.nav-dropdown{position:relative}
-.nav-dropdown>a{display:flex;align-items:center;gap:.3rem}
-.nav-dropdown>a::after{content:'▾';font-size:.65rem;margin-top:1px}
-.dropdown-menu{display:none;position:absolute;top:100%;left:0;background:#3E2010;min-width:190px;border-top:2px solid var(--gold);z-index:300;box-shadow:0 8px 24px rgba(0,0,0,.35)}
-.dropdown-menu a{display:block;padding:.75rem 1.2rem;color:rgba(255,255,255,.85);font-size:.78rem;font-weight:500;text-transform:uppercase;letter-spacing:.05em;border-bottom:1px solid rgba(255,255,255,.07);transition:background .2s}
-.dropdown-menu a:hover{background:rgba(255,255,255,.1);color:var(--white)}
-.nav-dropdown:hover .dropdown-menu{display:block}
 </style>
 </head>
 <body>
@@ -386,32 +968,32 @@ footer{background:var(--charcoal);color:rgba(255,255,255,.7);padding:3rem 2rem 1
 
       <!-- Decorative top line -->
       <div style="display:flex;align-items:center;gap:1rem;justify-content:center;margin-bottom:1.5rem">
-        <div style="height:2px;width:60px;background:linear-gradient(to right,transparent,var(--deep-orange))"></div>
+        <div style="height:2px;width:60px;background:linear-gradient(to right,transparent,var(--orange))"></div>
         <div style="width:10px;height:10px;background:var(--gold);transform:rotate(45deg)"></div>
-        <div style="height:2px;width:60px;background:linear-gradient(to left,transparent,var(--deep-orange))"></div>
+        <div style="height:2px;width:60px;background:linear-gradient(to left,transparent,var(--orange))"></div>
       </div>
 
       <!-- Welcome heading -->
-      <p style="font-size:.78rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--deep-orange);margin-bottom:.5rem">Welcome to</p>
-      <h2 style="font-family:'Libre Baskerville',serif;font-size:clamp(1.6rem,4vw,2.4rem);font-weight:700;color:#3E2010;margin-bottom:.25rem;line-height:1.2">UVAS</h2>
-      <p style="font-family:'Libre Baskerville',serif;font-size:.95rem;color:var(--deep-orange);font-style:italic;margin-bottom:.4rem;letter-spacing:.03em">Unnatha Vidyabhyasa Adhyapaka Sangham</p><p style="font-size:.82rem;color:var(--muted);margin-bottom:2rem;font-style:italic">Registration No. E.R. 299/98, Kerala</p>
+      <p style="font-size:.78rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--orange);margin-bottom:.5rem">Welcome to</p>
+      <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.6rem,4vw,2.4rem);font-weight:700;color:#3E2010;margin-bottom:.25rem;line-height:1.2">UVAS</h2>
+      <p style="font-family:'Cormorant Garamond',serif;font-size:.95rem;color:var(--orange);font-style:italic;margin-bottom:.4rem;letter-spacing:.03em">Unnatha Vidyabhyasa Adhyapaka Sangham</p><p style="font-size:.82rem;color:var(--muted);margin-bottom:2rem;font-style:italic">Registration No. E.R. 299/98, Kerala</p>
 
       <!-- Decorative divider -->
       <div style="width:64px;height:3px;background:var(--gold);margin:0 auto 2rem;border-radius:2px"></div>
 
       <!-- Welcome text -->
-      <p style="font-size:1.05rem;line-height:2;color:var(--text);max-width:780px;margin:0 auto 1.5rem;font-family:'Libre Baskerville',serif">
-        <strong style="color:#3E2010">"UNNATHA VIDYABHYASA ADHYAPAKA SANGHAM"</strong> (UVAS) began functioning in the year <strong style="color:var(--deep-orange)">1998</strong>. It works as an affiliated organisation of <strong style="color:#3E2010">Akhil Bharathiya Rashtriya Shaikshik Mahasangh</strong> (ABRSM), New Delhi. ABRSM is the <strong style="color:#3E2010">largest organisation of teachers in the country</strong>.
+      <p style="font-size:1.05rem;line-height:2;color:var(--text);max-width:780px;margin:0 auto 1.5rem;font-family:'Cormorant Garamond',serif">
+        <strong style="color:#3E2010">"UNNATHA VIDYABHYASA ADHYAPAKA SANGHAM"</strong> (UVAS) began functioning in the year <strong style="color:var(--orange)">1998</strong>. It works as an affiliated organisation of <strong style="color:#3E2010">Akhil Bharathiya Rashtriya Shaikshik Mahasangh</strong> (ABRSM), New Delhi. ABRSM is the <strong style="color:#3E2010">largest organisation of teachers in the country</strong>.
       </p>
 
       <!-- Read more button -->
-      <button onclick="showPage('about-intro')" style="margin-top:.75rem;background:var(--deep-orange);color:#fff;border:none;padding:.7rem 2rem;border-radius:4px;font-size:.88rem;font-weight:600;cursor:pointer;font-family:'Source Sans 3',sans-serif;letter-spacing:.04em;transition:background .2s" onmouseover="this.style.background='#96380A'" onmouseout="this.style.background='var(--deep-orange)'">Read More →</button>
+      <button onclick="showPage('about-intro')" style="margin-top:.75rem;background:var(--orange);color:#fff;border:none;padding:.7rem 2rem;border-radius:4px;font-size:.88rem;font-weight:600;cursor:pointer;font-family:'Outfit',sans-serif;letter-spacing:.04em;transition:background .2s" onmouseover="this.style.background='#96380A'" onmouseout="this.style.background='var(--orange)'">Read More →</button>
 
       <!-- Decorative bottom line -->
       <div style="display:flex;align-items:center;gap:1rem;justify-content:center;margin-top:2rem">
-        <div style="height:2px;width:60px;background:linear-gradient(to right,transparent,var(--deep-orange))"></div>
+        <div style="height:2px;width:60px;background:linear-gradient(to right,transparent,var(--orange))"></div>
         <div style="width:10px;height:10px;background:var(--gold);transform:rotate(45deg)"></div>
-        <div style="height:2px;width:60px;background:linear-gradient(to left,transparent,var(--deep-orange))"></div>
+        <div style="height:2px;width:60px;background:linear-gradient(to left,transparent,var(--orange))"></div>
       </div>
 
     </div>
@@ -475,19 +1057,19 @@ footer{background:var(--charcoal);color:rgba(255,255,255,.7);padding:3rem 2rem 1
             <div class="news-date"><div class="day">02</div><div class="mon">Mar</div></div>
             <div class="news-content"><span class="news-tag tag-news">News</span><h4>ABRSM National Convention — Report</h4><p>Summary of discussions from the Jaipur national convention.</p></div>
           </div>
-          <button class="btn btn-outline" onclick="showPage('news')" style="color:var(--deep-orange);border-color:var(--deep-orange);margin-top:1.25rem">View All Updates</button>
+          <button class="btn btn-outline" onclick="showPage('news')" style="color:var(--orange);border-color:var(--orange);margin-top:1.25rem">View All Updates</button>
         </div>
         <div>
           <div class="section-label">About UVAS</div>
           <h2 class="section-title">Our Mission</h2>
           <p style="color:var(--muted);font-size:.95rem;margin:1rem 0">UVAS (Kerala Wing of ABRSM) is committed to safeguarding the service rights and professional dignity of college and university teachers across Kerala — without any political affiliation.</p>
-          <blockquote style="border-left:3px solid var(--gold);padding-left:1rem;font-family:'Libre Baskerville',serif;font-style:italic;color:var(--charcoal);margin:1.25rem 0;font-size:.95rem">
+          <blockquote style="border-left:3px solid var(--gold);padding-left:1rem;font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--charcoal);margin:1.25rem 0;font-size:.95rem">
             "Rashtra Ke Hit Mein Shiksha, Shiksha Ke Hit Mein Shikshak, Shikshak Ke Hit Mein Samaj"
           </blockquote>
           <p style="color:var(--muted);font-size:.85rem">Education for the nation · Teaching for education · Society for teachers</p>
           <div style="display:flex;gap:1rem;margin-top:1.5rem;flex-wrap:wrap">
             <div style="background:var(--orange-light);border-radius:4px;padding:.75rem 1rem;font-size:.82rem;flex:1;min-width:120px">
-              <div style="font-weight:700;color:var(--deep-orange);font-size:.95rem">Govt/Aided</div>
+              <div style="font-weight:700;color:var(--orange);font-size:.95rem">Govt/Aided</div>
               <div style="color:var(--muted)">Colleges covered</div>
             </div>
             <div style="background:var(--saffron-light);border-radius:4px;padding:.75rem 1rem;font-size:.82rem;flex:1;min-width:120px">
@@ -510,10 +1092,10 @@ footer{background:var(--charcoal);color:rgba(255,255,255,.7);padding:3rem 2rem 1
 <!-- ══════════════════════ ABOUT US ══════════════════════ -->
 <!-- ══════════════════════ INTRODUCTION ══════════════════════ -->
 <div id="page-about-intro" class="page">
-  <div style="background:var(--deep-orange);padding:2.5rem 2rem;color:var(--white)">
+  <div class="page-header" style="padding:2.5rem 2.5rem">
     <div style="max-width:1100px;margin:0 auto">
-      <div class="section-label" style="color:var(--gold)">About Us</div>
-      <h1 style="color:var(--white);font-size:1.9rem">Introduction</h1>
+      <div class="section-label" >About Us</div>
+      <h1 style="color:var(--white);font-family:'Cormorant Garamond',serif;font-size:2rem">Introduction</h1>
       <p style="color:rgba(255,255,255,.75);font-size:.82rem;margin-top:.3rem;font-style:italic">Registration No. E.R. 299/98, Kerala</p>
       <p style="color:rgba(255,255,255,.65);font-size:.9rem;margin-top:.4rem">UVAS — Affiliated to ABRSM, New Delhi</p>
     </div>
@@ -523,12 +1105,12 @@ footer{background:var(--charcoal);color:rgba(255,255,255,.7);padding:3rem 2rem 1
       <div style="display:flex;align-items:center;gap:1rem;margin-bottom:2rem;padding-bottom:1.5rem;border-bottom:2px solid var(--orange-light)">
         <div style="background:var(--orange-light);border-radius:50%;width:56px;height:56px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.5rem">📖</div>
         <div>
-          <h2 style="font-size:1.2rem;color:var(--deep-orange);margin-bottom:.2rem">Our Story</h2>
+          <h2 style="font-size:1.2rem;color:var(--orange);margin-bottom:.2rem">Our Story</h2>
           <p style="font-size:.85rem;color:var(--muted)">Founded 1998 · Kerala Wing of ABRSM</p>
         </div>
       </div>
       <p style="font-size:1rem;line-height:1.9;color:var(--text);margin-bottom:1.5rem">
-        <strong style="color:var(--deep-orange)">"UNNATHA VIDYABHYASA ADHYAPAKA SANGHAM"</strong> (UVAS) began functioning in the year <strong>1998</strong>. It works as an affiliated organisation of <strong>Akhil Bharathiya Rashtriya Shaikshik Mahasangh</strong> (ABRSM), New Delhi.
+        <strong style="color:var(--orange)">"UNNATHA VIDYABHYASA ADHYAPAKA SANGHAM"</strong> (UVAS) began functioning in the year <strong>1998</strong>. It works as an affiliated organisation of <strong>Akhil Bharathiya Rashtriya Shaikshik Mahasangh</strong> (ABRSM), New Delhi.
       </p>
       <p style="font-size:1rem;line-height:1.9;color:var(--text);margin-bottom:1.5rem">
         ABRSM is the <strong>largest organisation of teachers in the country</strong> with a total membership of over <strong>fourteen hundred thousand teachers</strong> ranging from the pre-primary stage to the university level. It has membership from all states and union territories of the country and is firmly cemented by a nationalistic identity.
@@ -540,29 +1122,52 @@ footer{background:var(--charcoal);color:rgba(255,255,255,.7);padding:3rem 2rem 1
         UVAS is firmly entrenched in the <strong>values of cultural nationalism</strong> and is duty bound to serve the society and country in a selfless manner.
       </p>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem;margin-top:1.5rem">
-        <div style="background:var(--orange-light);border-radius:6px;padding:1.2rem;text-align:center;border:1px solid var(--deep-orange)">
-          <div style="font-family:'Libre Baskerville',serif;font-size:1.8rem;font-weight:700;color:var(--deep-orange)">1998</div>
+        <div style="background:var(--orange-light);border-radius:6px;padding:1.2rem;text-align:center;border:1px solid var(--orange)">
+          <div style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:700;color:var(--orange)">1998</div>
           <div style="font-size:.8rem;color:var(--muted);margin-top:.25rem;text-transform:uppercase;letter-spacing:.08em">Year Founded</div>
         </div>
-        <div style="background:var(--orange-light);border-radius:6px;padding:1.2rem;text-align:center;border:1px solid var(--deep-orange)">
-          <div style="font-family:'Libre Baskerville',serif;font-size:1.8rem;font-weight:700;color:var(--deep-orange)">14L+</div>
+        <div style="background:var(--orange-light);border-radius:6px;padding:1.2rem;text-align:center;border:1px solid var(--orange)">
+          <div style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:700;color:var(--orange)">14L+</div>
           <div style="font-size:.8rem;color:var(--muted);margin-top:.25rem;text-transform:uppercase;letter-spacing:.08em">National Members</div>
         </div>
-        <div style="background:var(--orange-light);border-radius:6px;padding:1.2rem;text-align:center;border:1px solid var(--deep-orange)">
-          <div style="font-family:'Libre Baskerville',serif;font-size:1.8rem;font-weight:700;color:var(--deep-orange)">All</div>
+        <div style="background:var(--orange-light);border-radius:6px;padding:1.2rem;text-align:center;border:1px solid var(--orange)">
+          <div style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:700;color:var(--orange)">All</div>
           <div style="font-size:.8rem;color:var(--muted);margin-top:.25rem;text-transform:uppercase;letter-spacing:.08em">States &amp; UTs</div>
         </div>
       </div>
+
+      <!-- Contact Address -->
+      <div style="margin-top:2rem;background:var(--orange-light);border:1px solid var(--orange);border-radius:8px;padding:1.5rem;display:flex;align-items:flex-start;gap:1.25rem;flex-wrap:wrap">
+        <div style="background:var(--orange);border-radius:50%;width:46px;height:46px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0">📍</div>
+        <div style="flex:1;min-width:200px">
+          <div style="font-weight:700;font-size:.82rem;color:var(--orange);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.75rem">Contact Us</div>
+          <div style="display:flex;flex-direction:column;gap:.5rem">
+            <div style="display:flex;align-items:flex-start;gap:.6rem;font-size:.92rem;color:var(--text)">
+              <span style="color:var(--orange);flex-shrink:0;font-size:1rem">🏠</span>
+              <span><strong>Madhava Nivas,</strong> Elamakkara, Kochi - 26</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:.6rem;font-size:.92rem;color:var(--text)">
+              <span style="color:var(--orange);flex-shrink:0;font-size:1rem">✉️</span>
+              <a href="mailto:uvasangh@gmail.com" style="color:var(--orange);font-weight:600;text-decoration:none">uvasangh@gmail.com</a>
+            </div>
+            <div style="display:flex;align-items:center;gap:.6rem;font-size:.92rem;color:var(--text)">
+              <span style="color:var(--orange);flex-shrink:0;font-size:1rem">📞</span>
+              <a href="tel:+919847598896" style="color:var(--orange);font-weight:600;text-decoration:none">+91 98475 98896</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </div>
 
 <!-- ══════════════════════ ABRSM ══════════════════════ -->
 <div id="page-about-abrsm" class="page">
-  <div style="background:var(--deep-orange);padding:2.5rem 2rem;color:var(--white)">
+  <div class="page-header" style="padding:2.5rem 2.5rem">
     <div style="max-width:1100px;margin:0 auto">
-      <div class="section-label" style="color:var(--gold)">About Us</div>
-      <h1 style="color:var(--white);font-size:1.9rem">ABRSM</h1>
+      <div class="section-label" >About Us</div>
+      <h1 style="color:var(--white);font-family:'Cormorant Garamond',serif;font-size:2rem">ABRSM</h1>
       <p style="color:rgba(255,255,255,.65);font-size:.9rem;margin-top:.4rem">Akhil Bharathiya Rashtriya Shaikshik Mahasangh, New Delhi</p>
     </div>
   </div>
@@ -571,12 +1176,12 @@ footer{background:var(--charcoal);color:rgba(255,255,255,.7);padding:3rem 2rem 1
       <div style="display:flex;align-items:center;gap:1rem;margin-bottom:2rem;padding-bottom:1.5rem;border-bottom:2px solid var(--orange-light)">
         <div style="background:var(--orange-light);border-radius:50%;width:56px;height:56px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.5rem">🏛️</div>
         <div>
-          <h2 style="font-size:1.2rem;color:var(--deep-orange);margin-bottom:.2rem">Akhil Bharathiya Rashtriya Shaikshik Mahasangh</h2>
+          <h2 style="font-size:1.2rem;color:var(--orange);margin-bottom:.2rem">Akhil Bharathiya Rashtriya Shaikshik Mahasangh</h2>
           <p style="font-size:.85rem;color:var(--muted)">National Headquarters, New Delhi · Founded 1988</p>
         </div>
       </div>
       <p style="font-size:1rem;line-height:1.9;color:var(--text);margin-bottom:1.5rem">
-        <strong style="color:var(--deep-orange)">Akhil Bharathiya Rashtriya Shaikshik Mahasangh (ABRSM)</strong> is the largest organisation of teachers in India, with a total membership of over <strong>fourteen hundred thousand teachers</strong> ranging from the pre-primary stage to the university level.
+        <strong style="color:var(--orange)">Akhil Bharathiya Rashtriya Shaikshik Mahasangh (ABRSM)</strong> is the largest organisation of teachers in India, with a total membership of over <strong>fourteen hundred thousand teachers</strong> ranging from the pre-primary stage to the university level.
       </p>
       <p style="font-size:1rem;line-height:1.9;color:var(--text);margin-bottom:1.5rem">
         It has membership from all states and union territories of the country and is firmly cemented by a nationalistic identity. The organisation was founded in <strong>1988</strong> and has its headquarters at <strong>606/13, Krishna Gali No. 9, Mauzpur, New Delhi</strong>.
@@ -588,13 +1193,13 @@ footer{background:var(--charcoal);color:rgba(255,255,255,.7);padding:3rem 2rem 1
         Along with safeguarding teachers' interests including their salary, allowances, service conditions and other facilities, the Mahasangh keeps in mind its national objectives and plans and executes programmes of social concern and educational upgradation.
       </p>
       <div style="background:#3E2010;border-radius:6px;padding:1.5rem;text-align:center">
-        <p style="font-family:'Libre Baskerville',serif;font-style:italic;color:var(--gold);font-size:1.05rem;line-height:1.7;margin-bottom:.5rem">
+        <p style="font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--gold);font-size:1.05rem;line-height:1.7;margin-bottom:.5rem">
           "Rashtra Ke Hit Mein Shiksha<br/>Shiksha Ke Hit Mein Shikshak<br/>Shikshak Ke Hit Mein Samaj"
         </p>
         <p style="font-size:.8rem;color:rgba(255,255,255,.55)">Education for the nation · Teaching for education · Society for teachers</p>
       </div>
       <div style="margin-top:1.5rem;text-align:center">
-        <a href="https://abrsm.in" target="_blank" style="background:var(--deep-orange);color:#fff;padding:.7rem 2rem;border-radius:4px;font-size:.88rem;font-weight:600;text-decoration:none;font-family:'Source Sans 3',sans-serif">Visit ABRSM National Website ↗</a>
+        <a href="https://abrsm.in" target="_blank" style="background:var(--orange);color:#fff;padding:.7rem 2rem;border-radius:4px;font-size:.88rem;font-weight:600;text-decoration:none;font-family:'Outfit',sans-serif">Visit ABRSM National Website ↗</a>
       </div>
     </div>
   </div>
@@ -602,10 +1207,10 @@ footer{background:var(--charcoal);color:rgba(255,255,255,.7);padding:3rem 2rem 1
 
 <!-- ══════════════════════ HISTORY OF UVAS ══════════════════════ -->
 <div id="page-about-history" class="page">
-  <div style="background:var(--deep-orange);padding:2.5rem 2rem;color:var(--white)">
+  <div class="page-header" style="padding:2.5rem 2.5rem">
     <div style="max-width:1100px;margin:0 auto">
-      <div class="section-label" style="color:var(--gold)">About Us</div>
-      <h1 style="color:var(--white);font-size:1.9rem">History of UVAS</h1>
+      <div class="section-label" >About Us</div>
+      <h1 style="color:var(--white);font-family:'Cormorant Garamond',serif;font-size:2rem">History of UVAS</h1>
       <p style="color:rgba(255,255,255,.65);font-size:.9rem;margin-top:.4rem">The journey of UVAS Kerala Wing since 1998</p>
     </div>
   </div>
@@ -614,30 +1219,30 @@ footer{background:var(--charcoal);color:rgba(255,255,255,.7);padding:3rem 2rem 1
       <div style="display:flex;align-items:center;gap:1rem;margin-bottom:2rem;padding-bottom:1.5rem;border-bottom:2px solid var(--orange-light)">
         <div style="background:var(--orange-light);border-radius:50%;width:56px;height:56px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.5rem">📜</div>
         <div>
-          <h2 style="font-size:1.2rem;color:var(--deep-orange);margin-bottom:.2rem">Our Journey</h2>
+          <h2 style="font-size:1.2rem;color:var(--orange);margin-bottom:.2rem">Our Journey</h2>
           <p style="font-size:.85rem;color:var(--muted)">Reg. No. E.R. 299/98, Kerala · Est. 1998</p>
         </div>
       </div>
       <!-- Timeline -->
       <div style="border-left:3px solid var(--orange-light);padding-left:1.5rem;margin-left:.5rem">
         <div style="margin-bottom:2rem;position:relative">
-          <div style="position:absolute;left:-1.95rem;top:.2rem;width:14px;height:14px;background:var(--deep-orange);border-radius:50%;border:2px solid #fff;box-shadow:0 0 0 2px var(--deep-orange)"></div>
-          <div style="font-family:'Libre Baskerville',serif;font-weight:700;color:var(--deep-orange);font-size:1.1rem;margin-bottom:.3rem">1998 — Foundation</div>
+          <div style="position:absolute;left:-1.95rem;top:.2rem;width:14px;height:14px;background:var(--orange);border-radius:50%;border:2px solid #fff;box-shadow:0 0 0 2px var(--orange)"></div>
+          <div style="font-family:'Cormorant Garamond',serif;font-weight:700;color:var(--orange);font-size:1.1rem;margin-bottom:.3rem">1998 — Foundation</div>
           <p style="font-size:.95rem;line-height:1.8;color:var(--text)">UVAS was established in Kerala as the state wing of ABRSM, registered under Registration No. E.R. 299/98. The organisation began with a mission to unite college teachers of Kerala under a platform rooted in Indian values.</p>
         </div>
         <div style="margin-bottom:2rem;position:relative">
-          <div style="position:absolute;left:-1.95rem;top:.2rem;width:14px;height:14px;background:var(--deep-orange);border-radius:50%;border:2px solid #fff;box-shadow:0 0 0 2px var(--deep-orange)"></div>
-          <div style="font-family:'Libre Baskerville',serif;font-weight:700;color:var(--deep-orange);font-size:1.1rem;margin-bottom:.3rem">Growth &amp; Expansion</div>
+          <div style="position:absolute;left:-1.95rem;top:.2rem;width:14px;height:14px;background:var(--orange);border-radius:50%;border:2px solid #fff;box-shadow:0 0 0 2px var(--orange)"></div>
+          <div style="font-family:'Cormorant Garamond',serif;font-weight:700;color:var(--orange);font-size:1.1rem;margin-bottom:.3rem">Growth &amp; Expansion</div>
           <p style="font-size:.95rem;line-height:1.8;color:var(--text)">Over the years UVAS expanded its membership across all 14 districts of Kerala, covering Government, Aided, and Self-Financing colleges. District units were established to strengthen grassroots representation.</p>
         </div>
         <div style="margin-bottom:2rem;position:relative">
-          <div style="position:absolute;left:-1.95rem;top:.2rem;width:14px;height:14px;background:var(--deep-orange);border-radius:50%;border:2px solid #fff;box-shadow:0 0 0 2px var(--deep-orange)"></div>
-          <div style="font-family:'Libre Baskerville',serif;font-weight:700;color:var(--deep-orange);font-size:1.1rem;margin-bottom:.3rem">Service &amp; Advocacy</div>
+          <div style="position:absolute;left:-1.95rem;top:.2rem;width:14px;height:14px;background:var(--orange);border-radius:50%;border:2px solid #fff;box-shadow:0 0 0 2px var(--orange)"></div>
+          <div style="font-family:'Cormorant Garamond',serif;font-weight:700;color:var(--orange);font-size:1.1rem;margin-bottom:.3rem">Service &amp; Advocacy</div>
           <p style="font-size:.95rem;line-height:1.8;color:var(--text)">UVAS has consistently advocated for the service rights of college teachers — pay revisions, promotion under CAS, pension rights, and protection against arbitrary transfers. The organisation has met government officials and filed representations at the state level.</p>
         </div>
         <div style="position:relative">
           <div style="position:absolute;left:-1.95rem;top:.2rem;width:14px;height:14px;background:var(--gold);border-radius:50%;border:2px solid #fff;box-shadow:0 0 0 2px var(--gold)"></div>
-          <div style="font-family:'Libre Baskerville',serif;font-weight:700;color:var(--gold);font-size:1.1rem;margin-bottom:.3rem">Today — 2026</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-weight:700;color:var(--gold);font-size:1.1rem;margin-bottom:.3rem">Today — 2026</div>
           <p style="font-size:.95rem;line-height:1.8;color:var(--text)">UVAS continues to grow with 1,200+ active members across Kerala, a robust digital platform for member services, and a firm commitment to cultural nationalism and educational excellence.</p>
         </div>
       </div>
@@ -647,10 +1252,10 @@ footer{background:var(--charcoal);color:rgba(255,255,255,.7);padding:3rem 2rem 1
 
 <!-- ══════════════════════ VISION & MISSION ══════════════════════ -->
 <div id="page-about-vision" class="page">
-  <div style="background:var(--deep-orange);padding:2.5rem 2rem;color:var(--white)">
+  <div class="page-header" style="padding:2.5rem 2.5rem">
     <div style="max-width:1100px;margin:0 auto">
-      <div class="section-label" style="color:var(--gold)">About Us</div>
-      <h1 style="color:var(--white);font-size:1.9rem">Vision &amp; Mission</h1>
+      <div class="section-label" >About Us</div>
+      <h1 style="color:var(--white);font-family:'Cormorant Garamond',serif;font-size:2rem">Vision &amp; Mission</h1>
       <p style="color:rgba(255,255,255,.65);font-size:.9rem;margin-top:.4rem">What we stand for and what we strive to achieve</p>
     </div>
   </div>
@@ -658,26 +1263,26 @@ footer{background:var(--charcoal);color:rgba(255,255,255,.7);padding:3rem 2rem 1
     <div style="display:flex;flex-direction:column;gap:1.5rem">
 
       <!-- Vision -->
-      <div style="background:var(--white);border:1px solid var(--border);border-radius:8px;padding:2rem;border-top:4px solid var(--deep-orange)">
+      <div style="background:var(--white);border:1px solid var(--border);border-radius:8px;padding:2rem;border-top:4px solid var(--orange)">
         <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:1.5rem">
           <div style="background:var(--orange-light);border-radius:50%;width:46px;height:46px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0">🔭</div>
-          <h2 style="font-size:1.2rem;color:var(--deep-orange)">Vision of UVAS</h2>
+          <h2 style="font-size:1.2rem;color:var(--orange)">Vision of UVAS</h2>
         </div>
 
         <!-- Vision motto in coffee brown box -->
         <div style="background:#3E2010;border-radius:8px;padding:1.75rem;text-align:center;margin-bottom:1.5rem">
           <div style="display:flex;flex-direction:column;gap:.6rem">
-            <div style="font-family:'Libre Baskerville',serif;font-size:1.05rem;font-style:italic;color:var(--gold);line-height:1.6">
+            <div style="font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-style:italic;color:var(--gold);line-height:1.6">
               "Rashtra Ke Hith Mein Shiksha
             </div>
             <div style="font-size:.82rem;color:rgba(255,255,255,.7);font-style:italic">Education for National Glory</div>
             <div style="height:1px;background:rgba(255,255,255,.15);margin:.25rem 2rem"></div>
-            <div style="font-family:'Libre Baskerville',serif;font-size:1.05rem;font-style:italic;color:var(--gold);line-height:1.6">
+            <div style="font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-style:italic;color:var(--gold);line-height:1.6">
               Shiksha Ke Hith Mein Shikshak
             </div>
             <div style="font-size:.82rem;color:rgba(255,255,255,.7);font-style:italic">Teachers for Educational Glory</div>
             <div style="height:1px;background:rgba(255,255,255,.15);margin:.25rem 2rem"></div>
-            <div style="font-family:'Libre Baskerville',serif;font-size:1.05rem;font-style:italic;color:var(--gold);line-height:1.6">
+            <div style="font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-style:italic;color:var(--gold);line-height:1.6">
               Shikshak Ke Hith Mein Samaj"
             </div>
             <div style="font-size:.82rem;color:rgba(255,255,255,.7);font-style:italic">Society for Teachers' Glory</div>
@@ -685,8 +1290,8 @@ footer{background:var(--charcoal);color:rgba(255,255,255,.7);padding:3rem 2rem 1
         </div>
 
         <!-- Emblem and motto -->
-        <div style="background:var(--orange-light);border:1px solid var(--deep-orange);border-radius:6px;padding:1.25rem">
-          <div style="font-weight:700;font-size:.82rem;color:var(--deep-orange);text-transform:uppercase;letter-spacing:.1em;margin-bottom:1rem">Emblem &amp; Motto</div>
+        <div style="background:var(--orange-light);border:1px solid var(--orange);border-radius:6px;padding:1.25rem">
+          <div style="font-weight:700;font-size:.82rem;color:var(--orange);text-transform:uppercase;letter-spacing:.1em;margin-bottom:1rem">Emblem &amp; Motto</div>
           <div style="display:flex;gap:1.5rem;align-items:center;flex-wrap:wrap">
             <div style="flex-shrink:0;text-align:center">
               <img src="data:image/png;base64,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" alt="UVAS Emblem — Chinmudra" style="height:180px;width:auto;display:block;margin:0 auto"/>
@@ -696,7 +1301,7 @@ footer{background:var(--charcoal);color:rgba(255,255,255,.7);padding:3rem 2rem 1
                 The emblem of <strong>UNNATHA VIDYABHYASA ADHYAPAKA SANGHAM (UVAS)</strong> is the <strong>"Chinmudra image"</strong> — the gesture of knowledge and wisdom — and the motto is:
               </p>
               <div style="background:#3E2010;border-radius:6px;padding:1rem;text-align:center">
-                <p style="font-family:'Libre Baskerville',serif;font-size:1.15rem;font-style:italic;color:var(--gold);font-weight:700;margin-bottom:.3rem">
+                <p style="font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-style:italic;color:var(--gold);font-weight:700;margin-bottom:.3rem">
                   "Saa Vidya Yaa Vimukthaye"
                 </p>
                 <p style="font-size:.8rem;color:rgba(255,255,255,.65)">That which liberates is true education</p>
@@ -717,31 +1322,31 @@ footer{background:var(--charcoal);color:rgba(255,255,255,.7);padding:3rem 2rem 1
         </div>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:.9rem">
           <li style="display:flex;gap:.85rem;font-size:.95rem;line-height:1.75;color:var(--text)">
-            <span style="background:var(--deep-orange);color:#fff;font-weight:700;font-size:.78rem;min-width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:.15rem">a</span>
+            <span style="background:var(--orange);color:#fff;font-weight:700;font-size:.78rem;min-width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:.15rem">a</span>
             To promote co-operative feeling amongst teachers of the Higher Education Institutions in Kerala affiliated to various Universities.
           </li>
           <li style="display:flex;gap:.85rem;font-size:.95rem;line-height:1.75;color:var(--text)">
-            <span style="background:var(--deep-orange);color:#fff;font-weight:700;font-size:.78rem;min-width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:.15rem">b</span>
+            <span style="background:var(--orange);color:#fff;font-weight:700;font-size:.78rem;min-width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:.15rem">b</span>
             To secure for them fair conditions of life and work, better emoluments and other rights and privileges as University and various College teachers.
           </li>
           <li style="display:flex;gap:.85rem;font-size:.95rem;line-height:1.75;color:var(--text)">
-            <span style="background:var(--deep-orange);color:#fff;font-weight:700;font-size:.78rem;min-width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:.15rem">c</span>
+            <span style="background:var(--orange);color:#fff;font-weight:700;font-size:.78rem;min-width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:.15rem">c</span>
             To establish contact with educational organizations with similar aims.
           </li>
           <li style="display:flex;gap:.85rem;font-size:.95rem;line-height:1.75;color:var(--text)">
-            <span style="background:var(--deep-orange);color:#fff;font-weight:700;font-size:.78rem;min-width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:.15rem">d</span>
+            <span style="background:var(--orange);color:#fff;font-weight:700;font-size:.78rem;min-width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:.15rem">d</span>
             To promote higher education and research.
           </li>
           <li style="display:flex;gap:.85rem;font-size:.95rem;line-height:1.75;color:var(--text)">
-            <span style="background:var(--deep-orange);color:#fff;font-weight:700;font-size:.78rem;min-width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:.15rem">e</span>
+            <span style="background:var(--orange);color:#fff;font-weight:700;font-size:.78rem;min-width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:.15rem">e</span>
             To enable the teaching community to safeguard harmony, peace, discipline, and ethics.
           </li>
           <li style="display:flex;gap:.85rem;font-size:.95rem;line-height:1.75;color:var(--text)">
-            <span style="background:var(--deep-orange);color:#fff;font-weight:700;font-size:.78rem;min-width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:.15rem">f</span>
+            <span style="background:var(--orange);color:#fff;font-weight:700;font-size:.78rem;min-width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:.15rem">f</span>
             To promote healthy relationships between teachers and students, university administration, other sections of the community etc.
           </li>
           <li style="display:flex;gap:.85rem;font-size:.95rem;line-height:1.75;color:var(--text)">
-            <span style="background:var(--deep-orange);color:#fff;font-weight:700;font-size:.78rem;min-width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:.15rem">g</span>
+            <span style="background:var(--orange);color:#fff;font-weight:700;font-size:.78rem;min-width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:.15rem">g</span>
             To work for the improvement of education in response to the challenges to the ever-changing socio-economic situation.
           </li>
           <li style="display:flex;gap:.85rem;font-size:.95rem;line-height:1.75;color:var(--text);margin-top:1rem;padding-top:1rem;border-top:1.5px solid var(--orange-light)">
@@ -760,17 +1365,17 @@ footer{background:var(--charcoal);color:rgba(255,255,255,.7);padding:3rem 2rem 1
 
 <!-- ══════════════════════ STATE COMMITTEE ══════════════════════ -->
 <div id="page-state-committee" class="page">
-  <div style="background:var(--deep-orange);padding:2.5rem 2rem;color:var(--white)">
+  <div class="page-header" style="padding:2.5rem 2.5rem">
     <div style="max-width:1100px;margin:0 auto">
-      <div class="section-label" style="color:var(--gold)">Committee</div>
-      <h1 style="color:var(--white);font-size:1.9rem">State Committee</h1>
+      <div class="section-label" >Committee</div>
+      <h1 style="color:var(--white);font-family:'Cormorant Garamond',serif;font-size:2rem">State Committee</h1>
       <p style="color:rgba(255,255,255,.65);font-size:.9rem;margin-top:.4rem">UVAS Kerala Wing — State Level Office Bearers</p>
     </div>
   </div>
   <div class="section">
     <div style="background:var(--white);border:1px solid var(--border);border-radius:8px;padding:2rem;text-align:center">
       <div style="font-size:3rem;margin-bottom:1rem">🏛️</div>
-      <h2 style="color:var(--deep-orange);margin-bottom:.75rem">State Committee Details</h2>
+      <h2 style="color:var(--orange);margin-bottom:.75rem">State Committee Details</h2>
       <p style="color:var(--muted);font-size:.95rem">State Committee member details will be updated here. Please contact the State Secretary for the current list of office bearers.</p>
     </div>
   </div>
@@ -778,56 +1383,56 @@ footer{background:var(--charcoal);color:rgba(255,255,255,.7);padding:3rem 2rem 1
 
 <!-- ══════════════════════ DISTRICT COMMITTEE ══════════════════════ -->
 <div id="page-district-committee" class="page">
-  <div style="background:var(--deep-orange);padding:2.5rem 2rem;color:var(--white)">
+  <div class="page-header" style="padding:2.5rem 2.5rem">
     <div style="max-width:1100px;margin:0 auto">
-      <div class="section-label" style="color:var(--gold)">Committee</div>
-      <h1 style="color:var(--white);font-size:1.9rem">District Committee</h1>
+      <div class="section-label" >Committee</div>
+      <h1 style="color:var(--white);font-family:'Cormorant Garamond',serif;font-size:2rem">District Committee</h1>
       <p style="color:rgba(255,255,255,.65);font-size:.9rem;margin-top:.4rem">UVAS Kerala Wing — District Level Office Bearers</p>
     </div>
   </div>
   <div class="section">
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem">
       <div style="background:var(--white);border:1px solid var(--border);border-radius:6px;padding:1.2rem">
-        <div style="font-weight:700;color:var(--deep-orange);font-size:.9rem;margin-bottom:.3rem">Thiruvananthapuram</div>
+        <div style="font-weight:700;color:var(--orange);font-size:.9rem;margin-bottom:.3rem">Thiruvananthapuram</div>
         <div style="font-size:.82rem;color:var(--muted)">District Committee details coming soon</div>
       </div><div style="background:var(--white);border:1px solid var(--border);border-radius:6px;padding:1.2rem">
-        <div style="font-weight:700;color:var(--deep-orange);font-size:.9rem;margin-bottom:.3rem">Kollam</div>
+        <div style="font-weight:700;color:var(--orange);font-size:.9rem;margin-bottom:.3rem">Kollam</div>
         <div style="font-size:.82rem;color:var(--muted)">District Committee details coming soon</div>
       </div><div style="background:var(--white);border:1px solid var(--border);border-radius:6px;padding:1.2rem">
-        <div style="font-weight:700;color:var(--deep-orange);font-size:.9rem;margin-bottom:.3rem">Pathanamthitta</div>
+        <div style="font-weight:700;color:var(--orange);font-size:.9rem;margin-bottom:.3rem">Pathanamthitta</div>
         <div style="font-size:.82rem;color:var(--muted)">District Committee details coming soon</div>
       </div><div style="background:var(--white);border:1px solid var(--border);border-radius:6px;padding:1.2rem">
-        <div style="font-weight:700;color:var(--deep-orange);font-size:.9rem;margin-bottom:.3rem">Alappuzha</div>
+        <div style="font-weight:700;color:var(--orange);font-size:.9rem;margin-bottom:.3rem">Alappuzha</div>
         <div style="font-size:.82rem;color:var(--muted)">District Committee details coming soon</div>
       </div><div style="background:var(--white);border:1px solid var(--border);border-radius:6px;padding:1.2rem">
-        <div style="font-weight:700;color:var(--deep-orange);font-size:.9rem;margin-bottom:.3rem">Kottayam</div>
+        <div style="font-weight:700;color:var(--orange);font-size:.9rem;margin-bottom:.3rem">Kottayam</div>
         <div style="font-size:.82rem;color:var(--muted)">District Committee details coming soon</div>
       </div><div style="background:var(--white);border:1px solid var(--border);border-radius:6px;padding:1.2rem">
-        <div style="font-weight:700;color:var(--deep-orange);font-size:.9rem;margin-bottom:.3rem">Idukki</div>
+        <div style="font-weight:700;color:var(--orange);font-size:.9rem;margin-bottom:.3rem">Idukki</div>
         <div style="font-size:.82rem;color:var(--muted)">District Committee details coming soon</div>
       </div><div style="background:var(--white);border:1px solid var(--border);border-radius:6px;padding:1.2rem">
-        <div style="font-weight:700;color:var(--deep-orange);font-size:.9rem;margin-bottom:.3rem">Ernakulam</div>
+        <div style="font-weight:700;color:var(--orange);font-size:.9rem;margin-bottom:.3rem">Ernakulam</div>
         <div style="font-size:.82rem;color:var(--muted)">District Committee details coming soon</div>
       </div><div style="background:var(--white);border:1px solid var(--border);border-radius:6px;padding:1.2rem">
-        <div style="font-weight:700;color:var(--deep-orange);font-size:.9rem;margin-bottom:.3rem">Thrissur</div>
+        <div style="font-weight:700;color:var(--orange);font-size:.9rem;margin-bottom:.3rem">Thrissur</div>
         <div style="font-size:.82rem;color:var(--muted)">District Committee details coming soon</div>
       </div><div style="background:var(--white);border:1px solid var(--border);border-radius:6px;padding:1.2rem">
-        <div style="font-weight:700;color:var(--deep-orange);font-size:.9rem;margin-bottom:.3rem">Palakkad</div>
+        <div style="font-weight:700;color:var(--orange);font-size:.9rem;margin-bottom:.3rem">Palakkad</div>
         <div style="font-size:.82rem;color:var(--muted)">District Committee details coming soon</div>
       </div><div style="background:var(--white);border:1px solid var(--border);border-radius:6px;padding:1.2rem">
-        <div style="font-weight:700;color:var(--deep-orange);font-size:.9rem;margin-bottom:.3rem">Malappuram</div>
+        <div style="font-weight:700;color:var(--orange);font-size:.9rem;margin-bottom:.3rem">Malappuram</div>
         <div style="font-size:.82rem;color:var(--muted)">District Committee details coming soon</div>
       </div><div style="background:var(--white);border:1px solid var(--border);border-radius:6px;padding:1.2rem">
-        <div style="font-weight:700;color:var(--deep-orange);font-size:.9rem;margin-bottom:.3rem">Kozhikode</div>
+        <div style="font-weight:700;color:var(--orange);font-size:.9rem;margin-bottom:.3rem">Kozhikode</div>
         <div style="font-size:.82rem;color:var(--muted)">District Committee details coming soon</div>
       </div><div style="background:var(--white);border:1px solid var(--border);border-radius:6px;padding:1.2rem">
-        <div style="font-weight:700;color:var(--deep-orange);font-size:.9rem;margin-bottom:.3rem">Wayanad</div>
+        <div style="font-weight:700;color:var(--orange);font-size:.9rem;margin-bottom:.3rem">Wayanad</div>
         <div style="font-size:.82rem;color:var(--muted)">District Committee details coming soon</div>
       </div><div style="background:var(--white);border:1px solid var(--border);border-radius:6px;padding:1.2rem">
-        <div style="font-weight:700;color:var(--deep-orange);font-size:.9rem;margin-bottom:.3rem">Kannur</div>
+        <div style="font-weight:700;color:var(--orange);font-size:.9rem;margin-bottom:.3rem">Kannur</div>
         <div style="font-size:.82rem;color:var(--muted)">District Committee details coming soon</div>
       </div><div style="background:var(--white);border:1px solid var(--border);border-radius:6px;padding:1.2rem">
-        <div style="font-weight:700;color:var(--deep-orange);font-size:.9rem;margin-bottom:.3rem">Kasaragod</div>
+        <div style="font-weight:700;color:var(--orange);font-size:.9rem;margin-bottom:.3rem">Kasaragod</div>
         <div style="font-size:.82rem;color:var(--muted)">District Committee details coming soon</div>
       </div>
     </div>
@@ -836,17 +1441,17 @@ footer{background:var(--charcoal);color:rgba(255,255,255,.7);padding:3rem 2rem 1
 
 <!-- ══════════════════════ SERVICE CELL ══════════════════════ -->
 <div id="page-service-cell" class="page">
-  <div style="background:var(--deep-orange);padding:2.5rem 2rem;color:var(--white)">
+  <div class="page-header" style="padding:2.5rem 2.5rem">
     <div style="max-width:1100px;margin:0 auto">
-      <div class="section-label" style="color:var(--gold)">Committee</div>
-      <h1 style="color:var(--white);font-size:1.9rem">Service Cell</h1>
+      <div class="section-label" >Committee</div>
+      <h1 style="color:var(--white);font-family:'Cormorant Garamond',serif;font-size:2rem">Service Cell</h1>
       <p style="color:rgba(255,255,255,.65);font-size:.9rem;margin-top:.4rem">Service related guidance and support for members</p>
     </div>
   </div>
   <div class="section">
     <div style="background:var(--white);border:1px solid var(--border);border-radius:8px;padding:2rem;text-align:center">
       <div style="font-size:3rem;margin-bottom:1rem">⚖️</div>
-      <h2 style="color:var(--deep-orange);margin-bottom:.75rem">Service Cell</h2>
+      <h2 style="color:var(--orange);margin-bottom:.75rem">Service Cell</h2>
       <p style="color:var(--muted);font-size:.95rem;margin-bottom:1.5rem">The Service Cell handles all service-related matters including pay disputes, promotion issues, transfer grievances, and pension matters for UVAS members across Kerala.</p>
       <button class="btn btn-primary" onclick="showPage('helpdesk')">Go to Service Help Desk</button>
     </div>
@@ -855,17 +1460,17 @@ footer{background:var(--charcoal);color:rgba(255,255,255,.7);padding:3rem 2rem 1
 
 <!-- ══════════════════════ MEDIA CELL ══════════════════════ -->
 <div id="page-media-cell" class="page">
-  <div style="background:var(--deep-orange);padding:2.5rem 2rem;color:var(--white)">
+  <div class="page-header" style="padding:2.5rem 2.5rem">
     <div style="max-width:1100px;margin:0 auto">
-      <div class="section-label" style="color:var(--gold)">Committee</div>
-      <h1 style="color:var(--white);font-size:1.9rem">Media Cell</h1>
+      <div class="section-label" >Committee</div>
+      <h1 style="color:var(--white);font-family:'Cormorant Garamond',serif;font-size:2rem">Media Cell</h1>
       <p style="color:rgba(255,255,255,.65);font-size:.9rem;margin-top:.4rem">Communications and media outreach of UVAS Kerala Wing</p>
     </div>
   </div>
   <div class="section">
     <div style="background:var(--white);border:1px solid var(--border);border-radius:8px;padding:2rem;text-align:center">
       <div style="font-size:3rem;margin-bottom:1rem">📢</div>
-      <h2 style="color:var(--deep-orange);margin-bottom:.75rem">Media Cell</h2>
+      <h2 style="color:var(--orange);margin-bottom:.75rem">Media Cell</h2>
       <p style="color:var(--muted);font-size:.95rem">The Media Cell manages all communications, press releases, social media, and public outreach activities of UVAS Kerala Wing. Media Cell details and contact information will be updated here.</p>
     </div>
   </div>
@@ -873,10 +1478,10 @@ footer{background:var(--charcoal);color:rgba(255,255,255,.7);padding:3rem 2rem 1
 
 <!-- ══════════════════════ MEMBERSHIP ══════════════════════ -->
 <div id="page-membership" class="page">
-  <div style="background:var(--deep-orange);padding:2.5rem 2rem;color:var(--white)">
+  <div class="page-header" style="padding:2.5rem 2.5rem">
     <div style="max-width:1100px;margin:0 auto">
-      <div class="section-label" style="color:var(--gold)">Membership</div>
-      <h1 style="color:var(--white);font-size:1.9rem">New Member &amp; Renewal</h1>
+      <div class="section-label" >Membership</div>
+      <h1 style="color:var(--white);font-family:'Cormorant Garamond',serif;font-size:2rem">New Member &amp; Renewal</h1>
       <p style="color:rgba(255,255,255,.65);font-size:.9rem;margin-top:.4rem">Register as a new member or renew your existing membership</p>
     </div>
   </div>
@@ -886,10 +1491,10 @@ footer{background:var(--charcoal);color:rgba(255,255,255,.7);padding:3rem 2rem 1
       <div class="form-wrap">
         <!-- TOGGLE TABS -->
         <div style="display:flex;gap:0;margin-bottom:1.75rem;border:1.5px solid var(--border);border-radius:6px;overflow:hidden">
-          <button id="tab-new" onclick="switchTab('new')" style="flex:1;padding:.75rem;font-size:.9rem;font-weight:700;font-family:'Source Sans 3',sans-serif;border:none;cursor:pointer;background:var(--deep-orange);color:#fff;transition:all .2s">
+          <button id="tab-new" onclick="switchTab('new')" style="flex:1;padding:.75rem;font-size:.9rem;font-weight:700;font-family:'Outfit',sans-serif;border:none;cursor:pointer;background:var(--orange);color:#fff;transition:all .2s">
             🆕 New Member
           </button>
-          <button id="tab-renew" onclick="switchTab('renew')" style="flex:1;padding:.75rem;font-size:.9rem;font-weight:700;font-family:'Source Sans 3',sans-serif;border:none;cursor:pointer;background:var(--white);color:var(--deep-orange);border-left:1.5px solid var(--border);transition:all .2s">
+          <button id="tab-renew" onclick="switchTab('renew')" style="flex:1;padding:.75rem;font-size:.9rem;font-weight:700;font-family:'Outfit',sans-serif;border:none;cursor:pointer;background:var(--white);color:var(--orange);border-left:1.5px solid var(--border);transition:all .2s">
             🔄 Renew Membership
           </button>
         </div>
@@ -1107,7 +1712,7 @@ footer{background:var(--charcoal);color:rgba(255,255,255,.7);padding:3rem 2rem 1
 
           <!-- Member details shown after verification -->
           <div id="renewDetails" style="display:none">
-            <div style="background:var(--orange-light);border:1px solid var(--deep-orange);border-radius:6px;padding:1.2rem;margin:1rem 0">
+            <div style="background:var(--orange-light);border:1px solid var(--orange);border-radius:6px;padding:1.2rem;margin:1rem 0">
               <div class="form-section-label" style="margin-bottom:.75rem">Your Membership Details</div>
               <table style="width:100%;font-size:.85rem;border-collapse:collapse">
                 <tr><td style="padding:5px 0;color:var(--muted);width:45%">Name</td><td id="rd-name" style="font-weight:600;color:var(--charcoal)">—</td></tr>
@@ -1160,11 +1765,11 @@ footer{background:var(--charcoal);color:rgba(255,255,255,.7);padding:3rem 2rem 1
         <div class="card" style="margin-bottom:1rem">
           <h3 style="margin-bottom:.75rem;font-size:1rem">Membership Benefits</h3>
           <ul style="list-style:none;display:flex;flex-direction:column;gap:.6rem">
-            <li style="display:flex;gap:.6rem;font-size:.85rem"><span style="color:var(--deep-orange);font-weight:700">✓</span>Service grievance support &amp; legal guidance</li>
-            <li style="display:flex;gap:.6rem;font-size:.85rem"><span style="color:var(--deep-orange);font-weight:700">✓</span>Access to orders, circulars &amp; GOs</li>
-            <li style="display:flex;gap:.6rem;font-size:.85rem"><span style="color:var(--deep-orange);font-weight:700">✓</span>Prajnabharati journal subscription</li>
-            <li style="display:flex;gap:.6rem;font-size:.85rem"><span style="color:var(--deep-orange);font-weight:700">✓</span>Participation in national conventions</li>
-            <li style="display:flex;gap:.6rem;font-size:.85rem"><span style="color:var(--deep-orange);font-weight:700">✓</span>Email alerts for renewals &amp; notices</li>
+            <li style="display:flex;gap:.6rem;font-size:.85rem"><span style="color:var(--orange);font-weight:700">✓</span>Service grievance support &amp; legal guidance</li>
+            <li style="display:flex;gap:.6rem;font-size:.85rem"><span style="color:var(--orange);font-weight:700">✓</span>Access to orders, circulars &amp; GOs</li>
+            <li style="display:flex;gap:.6rem;font-size:.85rem"><span style="color:var(--orange);font-weight:700">✓</span>Prajnabharati journal subscription</li>
+            <li style="display:flex;gap:.6rem;font-size:.85rem"><span style="color:var(--orange);font-weight:700">✓</span>Participation in national conventions</li>
+            <li style="display:flex;gap:.6rem;font-size:.85rem"><span style="color:var(--orange);font-weight:700">✓</span>Email alerts for renewals &amp; notices</li>
           </ul>
         </div>
         <div class="card" style="background:var(--saffron-light);border-color:var(--saffron)">
@@ -1175,8 +1780,8 @@ footer{background:var(--charcoal);color:rgba(255,255,255,.7);padding:3rem 2rem 1
           <h3 style="margin-bottom:.5rem;font-size:.95rem">Renewal Reminders</h3>
           <p style="font-size:.83rem;color:var(--muted)">The system automatically sends email reminders 30 days and 7 days before your membership expiry. Non-renewed memberships are flagged in the admin panel.</p>
         </div>
-        <div class="card" style="margin-top:1rem;background:var(--orange-light);border-color:var(--deep-orange)">
-          <h3 style="font-size:.9rem;color:var(--deep-orange);margin-bottom:.4rem">Already a Member?</h3>
+        <div class="card" style="margin-top:1rem;background:var(--orange-light);border-color:var(--orange)">
+          <h3 style="font-size:.9rem;color:var(--orange);margin-bottom:.4rem">Already a Member?</h3>
           <p style="font-size:.82rem;color:var(--muted);margin-bottom:.75rem">Log in to view your membership status and renew.</p>
           <div class="form-group" style="margin-bottom:.6rem"><input type="text" placeholder="Employee ID or Mobile No."/></div>
           <div class="form-group" style="margin-bottom:.75rem"><input type="password" placeholder="Password"/></div>
@@ -1189,10 +1794,10 @@ footer{background:var(--charcoal);color:rgba(255,255,255,.7);padding:3rem 2rem 1
 
 <!-- ══════════════════════ HELPDESK ══════════════════════ -->
 <div id="page-helpdesk" class="page">
-  <div style="background:var(--deep-orange);padding:2.5rem 2rem;color:var(--white)">
+  <div class="page-header" style="padding:2.5rem 2.5rem">
     <div style="max-width:1100px;margin:0 auto">
-      <div class="section-label" style="color:var(--gold)">Support</div>
-      <h1 style="color:var(--white);font-size:1.9rem">Service Help Desk</h1>
+      <div class="section-label" >Support</div>
+      <h1 style="color:var(--white);font-family:'Cormorant Garamond',serif;font-size:2rem">Service Help Desk</h1>
       <p style="color:rgba(255,255,255,.65);font-size:.9rem;margin-top:.4rem">Post service-related queries and get official replies — like Quora, for teachers</p>
     </div>
   </div>
@@ -1322,10 +1927,10 @@ footer{background:var(--charcoal);color:rgba(255,255,255,.7);padding:3rem 2rem 1
 
 <!-- ══════════════════════ NEWS & EVENTS ══════════════════════ -->
 <div id="page-news" class="page">
-  <div style="background:var(--deep-orange);padding:2.5rem 2rem;color:var(--white)">
+  <div class="page-header" style="padding:2.5rem 2.5rem">
     <div style="max-width:1100px;margin:0 auto">
-      <div class="section-label" style="color:var(--gold)">Updates</div>
-      <h1 style="color:var(--white);font-size:1.9rem">News &amp; Events</h1>
+      <div class="section-label" >Updates</div>
+      <h1 style="color:var(--white);font-family:'Cormorant Garamond',serif;font-size:2rem">News &amp; Events</h1>
     </div>
   </div>
   <div class="section">
@@ -1346,7 +1951,7 @@ footer{background:var(--charcoal);color:rgba(255,255,255,.7);padding:3rem 2rem 1
         </div>
       </div>
       <div>
-        <h2 style="font-size:1.1rem;margin-bottom:1.25rem;border-bottom:2px solid var(--deep-orange);padding-bottom:.5rem;display:inline-block">Recent News</h2>
+        <h2 style="font-size:1.1rem;margin-bottom:1.25rem;border-bottom:2px solid var(--orange);padding-bottom:.5rem;display:inline-block">Recent News</h2>
         <div class="news-item">
           <div class="news-date"><div class="day">15</div><div class="mon">Mar</div></div>
           <div class="news-content"><span class="news-tag tag-circular">Circular</span><h4>UGC Pay Commission — Revised Order 14/2025</h4><p>Pay scale revision for Assistant Professors effective April 1, 2025. Click to download.</p></div>
@@ -1366,10 +1971,10 @@ footer{background:var(--charcoal);color:rgba(255,255,255,.7);padding:3rem 2rem 1
 
 <!-- ══════════════════════ ORDERS & CIRCULARS ══════════════════════ -->
 <div id="page-orders" class="page">
-  <div style="background:var(--deep-orange);padding:2.5rem 2rem;color:var(--white)">
+  <div class="page-header" style="padding:2.5rem 2.5rem">
     <div style="max-width:1100px;margin:0 auto">
-      <div class="section-label" style="color:var(--gold)">Documents</div>
-      <h1 style="color:var(--white);font-size:1.9rem">Orders &amp; Circulars</h1>
+      <div class="section-label" >Documents</div>
+      <h1 style="color:var(--white);font-family:'Cormorant Garamond',serif;font-size:2rem">Orders &amp; Circulars</h1>
       <p style="color:rgba(255,255,255,.65);font-size:.9rem;margin-top:.4rem">Government orders, UGC circulars, and ABRSM notifications</p>
     </div>
   </div>
@@ -1459,10 +2064,10 @@ footer{background:var(--charcoal);color:rgba(255,255,255,.7);padding:3rem 2rem 1
 
 <!-- ══════════════════════ GALLERY ══════════════════════ -->
 <div id="page-gallery" class="page">
-  <div style="background:var(--deep-orange);padding:2.5rem 2rem;color:var(--white)">
+  <div class="page-header" style="padding:2.5rem 2.5rem">
     <div style="max-width:1100px;margin:0 auto">
-      <div class="section-label" style="color:var(--gold)">Photo Gallery</div>
-      <h1 style="color:var(--white);font-size:1.9rem">Gallery</h1>
+      <div class="section-label" >Photo Gallery</div>
+      <h1 style="color:var(--white);font-family:'Cormorant Garamond',serif;font-size:2rem">Gallery</h1>
       <p style="color:rgba(255,255,255,.65);font-size:.9rem;margin-top:.4rem">Events, programmes and activities of UVAS Kerala Wing</p>
     </div>
   </div>
@@ -1470,10 +2075,10 @@ footer{background:var(--charcoal);color:rgba(255,255,255,.7);padding:3rem 2rem 1
 
     <!-- Filter tabs -->
     <div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:2rem">
-      <button onclick="filterGallery('all',this)" style="background:var(--deep-orange);color:#fff;border:none;padding:.45rem 1.1rem;border-radius:20px;font-size:.8rem;font-weight:600;cursor:pointer;font-family:'Source Sans 3',sans-serif" class="gal-btn">All</button>
-      <button onclick="filterGallery('events',this)" style="background:var(--white);color:var(--deep-orange);border:1.5px solid var(--deep-orange);padding:.45rem 1.1rem;border-radius:20px;font-size:.8rem;font-weight:600;cursor:pointer;font-family:'Source Sans 3',sans-serif" class="gal-btn">Events</button>
-      <button onclick="filterGallery('meetings',this)" style="background:var(--white);color:var(--deep-orange);border:1.5px solid var(--deep-orange);padding:.45rem 1.1rem;border-radius:20px;font-size:.8rem;font-weight:600;cursor:pointer;font-family:'Source Sans 3',sans-serif" class="gal-btn">Meetings</button>
-      <button onclick="filterGallery('programmes',this)" style="background:var(--white);color:var(--deep-orange);border:1.5px solid var(--deep-orange);padding:.45rem 1.1rem;border-radius:20px;font-size:.8rem;font-weight:600;cursor:pointer;font-family:'Source Sans 3',sans-serif" class="gal-btn">Programmes</button>
+      <button onclick="filterGallery('all',this)" style="background:var(--orange);color:#fff;border:none;padding:.45rem 1.1rem;border-radius:20px;font-size:.8rem;font-weight:600;cursor:pointer;font-family:'Outfit',sans-serif" class="gal-btn">All</button>
+      <button onclick="filterGallery('events',this)" style="background:var(--white);color:var(--orange);border:1.5px solid var(--orange);padding:.45rem 1.1rem;border-radius:20px;font-size:.8rem;font-weight:600;cursor:pointer;font-family:'Outfit',sans-serif" class="gal-btn">Events</button>
+      <button onclick="filterGallery('meetings',this)" style="background:var(--white);color:var(--orange);border:1.5px solid var(--orange);padding:.45rem 1.1rem;border-radius:20px;font-size:.8rem;font-weight:600;cursor:pointer;font-family:'Outfit',sans-serif" class="gal-btn">Meetings</button>
+      <button onclick="filterGallery('programmes',this)" style="background:var(--white);color:var(--orange);border:1.5px solid var(--orange);padding:.45rem 1.1rem;border-radius:20px;font-size:.8rem;font-weight:600;cursor:pointer;font-family:'Outfit',sans-serif" class="gal-btn">Programmes</button>
     </div>
 
     <!-- Gallery grid - placeholder cards -->
@@ -1521,7 +2126,7 @@ footer{background:var(--charcoal);color:rgba(255,255,255,.7);padding:3rem 2rem 1
     </div>
 
     <!-- Upload notice for admin -->
-    <div style="margin-top:2rem;background:var(--orange-light);border:1px solid var(--deep-orange);border-radius:6px;padding:1.2rem;font-size:.85rem;color:var(--deep-orange);text-align:center">
+    <div style="margin-top:2rem;background:var(--orange-light);border:1px solid var(--orange);border-radius:6px;padding:1.2rem;font-size:.85rem;color:var(--orange);text-align:center">
       📷 &nbsp;To add photos, log in to the <strong>Admin Panel</strong> and upload images with category and caption.
     </div>
 
@@ -1547,9 +2152,9 @@ function filterGallery(cat, btn) {
   });
   document.querySelectorAll('.gal-btn').forEach(b => {
     b.style.background = 'var(--white)';
-    b.style.color = 'var(--deep-orange)';
+    b.style.color = 'var(--orange)';
   });
-  btn.style.background = 'var(--deep-orange)';
+  btn.style.background = 'var(--orange)';
   btn.style.color = '#fff';
 }
 function openLightbox(el) {
@@ -1567,10 +2172,10 @@ function closeLightbox() {
 
 <!-- ══════════════════════ JOURNAL ══════════════════════ -->
 <div id="page-journal" class="page">
-  <div style="background:var(--deep-orange);padding:2.5rem 2rem;color:var(--white)">
+  <div class="page-header" style="padding:2.5rem 2.5rem">
     <div style="max-width:1100px;margin:0 auto">
-      <div class="section-label" style="color:var(--gold)">Publication</div>
-      <h1 style="color:var(--white);font-size:1.9rem">Prajnabharati Journal</h1>
+      <div class="section-label" >Publication</div>
+      <h1 style="color:var(--white);font-family:'Cormorant Garamond',serif;font-size:2rem">Prajnabharati Journal</h1>
       <p style="color:rgba(255,255,255,.65);font-size:.9rem;margin-top:.4rem">Official journal of ABRSM — Education, research, and policy</p>
     </div>
   </div>
@@ -1587,11 +2192,11 @@ function closeLightbox() {
 
 <!-- ══════════════════════ ADMIN PANEL ══════════════════════ -->
 <div id="page-admin" class="page">
-  <div style="background:var(--deep-orange);padding:2.5rem 2rem;color:var(--white)">
+  <div class="page-header" style="padding:2.5rem 2.5rem">
     <div style="max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem">
       <div>
-        <div class="section-label" style="color:var(--gold)">Admin Panel</div>
-        <h1 style="color:var(--white);font-size:1.9rem">UVAS Kerala Wing — CMS Dashboard</h1>
+        <div class="section-label" >Admin Panel</div>
+        <h1 style="color:var(--white);font-family:'Cormorant Garamond',serif;font-size:2rem">UVAS Kerala Wing — CMS Dashboard</h1>
         <p style="color:rgba(255,255,255,.5);font-size:.85rem;margin-top:.3rem">Manage all content without modifying code</p>
       </div>
     </div>
@@ -1615,7 +2220,7 @@ function closeLightbox() {
 
       <!-- Stat cards -->
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1rem;margin-bottom:2rem">
-        <div class="card" style="text-align:center"><div style="font-size:1.8rem;font-weight:700;color:var(--deep-orange)">1,247</div><div style="font-size:.8rem;color:var(--muted)">Total Members</div></div>
+        <div class="card" style="text-align:center"><div style="font-size:1.8rem;font-weight:700;color:var(--orange)">1,247</div><div style="font-size:.8rem;color:var(--muted)">Total Members</div></div>
         <div class="card" style="text-align:center"><div style="font-size:1.8rem;font-weight:700;color:var(--saffron)">38</div><div style="font-size:.8rem;color:var(--muted)">Pending Renewals</div></div>
         <div class="card" style="text-align:center"><div style="font-size:1.8rem;font-weight:700;color:var(--gold)">5</div><div style="font-size:.8rem;color:var(--muted)">Near Retirement (60)</div></div>
         <div class="card" style="text-align:center"><div style="font-size:1.8rem;font-weight:700;color:var(--red)">12</div><div style="font-size:.8rem;color:var(--muted)">Unanswered Queries</div></div>
@@ -1740,10 +2345,10 @@ function switchTab(tab) {
   const isNew = tab === 'new';
   document.getElementById('form-new').style.display = isNew ? 'block' : 'none';
   document.getElementById('form-renew').style.display = isNew ? 'none' : 'block';
-  document.getElementById('tab-new').style.background = isNew ? 'var(--deep-orange)' : 'var(--white)';
-  document.getElementById('tab-new').style.color = isNew ? '#fff' : 'var(--deep-orange)';
-  document.getElementById('tab-renew').style.background = isNew ? 'var(--white)' : 'var(--deep-orange)';
-  document.getElementById('tab-renew').style.color = isNew ? 'var(--deep-orange)' : '#fff';
+  document.getElementById('tab-new').style.background = isNew ? 'var(--orange)' : 'var(--white)';
+  document.getElementById('tab-new').style.color = isNew ? '#fff' : 'var(--orange)';
+  document.getElementById('tab-renew').style.background = isNew ? 'var(--white)' : 'var(--orange)';
+  document.getElementById('tab-renew').style.color = isNew ? 'var(--orange)' : '#fff';
 }
 
 function verifyMember() {
