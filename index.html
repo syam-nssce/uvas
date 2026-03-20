@@ -146,15 +146,24 @@ nav{
 .dropdown-menu{
   display:none;
   position:absolute;
-  top:calc(100% + 3px);
+  top:100%;
   left:0;
   background:var(--brown);
   min-width:210px;
   border-top:3px solid var(--gold);
   border-radius:0 0 var(--radius-sm) var(--radius-sm);
-  z-index:300;
+  z-index:400;
   box-shadow:var(--shadow-lg);
   overflow:hidden;
+}
+/* Bridge gap so hover doesn't break */
+.nav-dropdown::after{
+  content:'';
+  position:absolute;
+  bottom:-6px;
+  left:0;
+  right:0;
+  height:6px;
 }
 .dropdown-menu a{
   display:block;
@@ -170,6 +179,10 @@ nav{
 .dropdown-menu a:last-child{border-bottom:none}
 .dropdown-menu a:hover{background:rgba(255,255,255,.1);color:var(--gold);padding-left:1.8rem}
 .nav-dropdown:hover .dropdown-menu{display:block}
+/* Desktop: keep hover working */
+@media(min-width:769px){
+  .nav-dropdown:hover .dropdown-menu{display:block}
+}
 
 /* ── PAGE SYSTEM ─────────────────────────────────────── */
 .page{display:none}
@@ -834,8 +847,8 @@ footer p{font-size:.83rem;line-height:1.8;color:rgba(255,255,255,.5);font-family
   .nav-dropdown{width:100%}
   .nav-dropdown>a{padding:1rem 1.5rem;border-bottom:1px solid rgba(255,255,255,.07)}
   .nav-dropdown>a::before{margin-left:auto;order:2}
-  .dropdown-menu{display:none;position:static;box-shadow:none;border-top:none;border-radius:0;background:rgba(0,0,0,.2);width:100%}
-  .nav-dropdown.open .dropdown-menu{display:block}
+  .dropdown-menu{display:none;position:static!important;box-shadow:none;border-top:1px solid rgba(255,255,255,.1);border-radius:0;background:rgba(0,0,0,.25);width:100%;z-index:auto}
+  .nav-dropdown.open .dropdown-menu{display:block!important}
   .dropdown-menu a{padding:.75rem 2.5rem;font-size:.78rem}
   .hero{padding:3.5rem 1.5rem 4rem}
   .hero h1{font-size:1.7rem}
