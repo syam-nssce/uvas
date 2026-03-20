@@ -78,6 +78,7 @@ nav{
   align-items:center;
   justify-content:flex-end;
   padding:0 1.5rem;
+  min-height:0;
 }
 .nav-brand{
   display:flex;
@@ -105,7 +106,12 @@ nav{
   margin-top:3px;
   line-height:1.5;
 }
-.nav-links{display:flex;gap:0;width:100%;justify-content:flex-end}
+.nav-links{
+  display:flex;gap:0;width:100%;justify-content:flex-end;
+  background:rgba(0,0,0,.15);
+  border-top:3px solid var(--gold);
+  padding:0 1.5rem;
+}
 .nav-links a{
   color:rgba(255,255,255,.82);
   font-family:'Outfit',sans-serif;
@@ -990,9 +996,10 @@ footer p{font-size:.83rem;line-height:1.8;color:rgba(255,255,255,.5);font-family
       <span></span><span></span><span></span>
     </button>
   </div>
-  <!-- BOTTOM ROW: full-width menu (desktop only) -->
-  <div class="nav-bottom-row">
-    <div class="nav-links" id="navLinks">
+  <!-- BOTTOM ROW: visual gold bar (desktop) -->
+  <div class="nav-bottom-row" aria-hidden="true"></div>
+  <!-- Menu: directly in nav so mobile can access it -->
+  <div class="nav-links" id="navLinks">
     <a href="#" class="active" onclick="showPage('home',this)">Home</a>
     <div class="nav-dropdown">
       <a href="#" onclick="toggleDropdown(event,this)">About Us</a>
@@ -1019,7 +1026,6 @@ footer p{font-size:.83rem;line-height:1.8;color:rgba(255,255,255,.5);font-family
     <a href="#" onclick="showPage('gallery',this)">Gallery</a>
     <a href="#" onclick="showPage('journal',this)">Prajnabharati</a>
     <a href="#" onclick="showPage('admin',this)" style="color:rgba(255,200,100,.85)">Admin</a>
-  </div>
   </div>
 </nav>
 
